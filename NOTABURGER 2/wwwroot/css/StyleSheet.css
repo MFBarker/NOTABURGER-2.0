@@ -1,0 +1,300 @@
+﻿/* FONTS */
+@font-face {
+    font-family: NotAFont2;
+    src: url('whatafont/whata2.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2e;
+    src: url('whatafont/whata2e.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2i;
+    src: url('whatafont/whata2i.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2s;
+    src: url('whatafont/whata2s.ttf');
+}
+
+
+html {
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+header {
+    padding: 0px;
+    border: 1px;
+    border-color: #044568;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: 0;
+    background-color: #044568;
+    color: white;
+    z-index:2;
+}
+
+.topMenu {
+    font-family: NotAFont2;
+    width: 12%;
+    text-align: center;
+    padding: 0px;
+    margin: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.mainHomepage {
+    width: 85%;
+    text-align: center;
+    padding: 0px;
+    margin-left: 125px;
+    margin-bottom: 20px;
+    background-color: #333;
+}
+
+.middleList {
+    width: 14%;
+    text-align: center;
+    padding: 0px;
+    margin: 10px;
+    display: inline-block;
+}
+
+.bottomMenu {
+    width: 12%;
+    text-align: center;
+    padding: 0px;
+    margin: 10px;
+    display: inline-block;
+    float: left;
+}
+
+
+footer {
+    padding: 0px;
+    border: 1px;
+    border-color: #333;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    font-family: NotAFont2i;
+}
+
+nav a:link {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:visited {
+    color: white;
+}
+
+.contentHome {
+    min-height: 120%;
+    margin-top: 190px;
+}
+
+.content {
+    min-height: 100%;
+    margin-top: 190px;
+}
+
+body {
+    margin: 0px;
+    top: 200px;
+    background-color: #848484;
+    height: 100%;
+    color: white;
+    font-family: 'whatafont_expandedexpanded';
+}
+
+button {
+    text-transform: uppercase;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: 'whatafont_expandedexpanded';
+}
+
+
+.table {
+    width: 90%;
+    margin-left: 8%;
+    text-align: left;
+    padding-left: 100px;
+    font-family: 'whatafont_expandedexpanded';
+    padding: 36px 0 32px;
+}
+
+.table2 {
+    width: 90%;
+    margin-left: 8%;
+    text-align: center;
+    padding-left: 100px;
+    font-family: 'whatafont_expandedexpanded';
+    padding: 36px 0 32px;
+}
+
+.mainButton1 {
+    font-family: Roca1;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+    z-index: 1;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    position: absolute;
+    left: 27.21%;
+    top: 94.5%;
+}
+
+.mainButton2 {
+    font-family: Pragmatica;
+    font-weight: 700;
+    background-color: black;
+    color: white;
+    margin-bottom: 5px;
+    z-index: 1;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    position: absolute;
+    left: 70%;
+    top: 178%;
+}
+
+.mainButton3 {
+    font-family: TT Norms;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 5px;
+    z-index: 1;
+    padding: 10px 25px;
+    border-radius: 8px;
+    text-decoration: underline;
+    text-decoration-color: white;
+    position: absolute;
+    left: 11%;
+    top: 270.5%;
+}
+
+td {
+    font-size: 14px;
+}
+
+th {
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-decoration-color: inherit;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+span {
+    margin-left: 650px;
+}
+
+/* SEARCH BAR*/
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: blue;
+}
+
+    .topnav a {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .topnav a:hover {
+            background-color: blue;
+            color: black;
+        }
+
+        .topnav a.active {
+            background-color: #2196F3;
+            color: white;
+        }
+
+    .topnav input[type=text] {
+        float: right;
+        padding: 6px;
+        margin-top: 8px;
+        margin-right: 16px;
+        border: none;
+        font-size: 17px;
+    }
+
+@media screen and (max-width: 600px) {
+    .topnav a, .topnav input[type=text] {
+        float: none;
+        display: block;
+        text-align: left;
+        width: 100%;
+        margin: 0;
+        padding: 14px;
+    }
+
+    .topnav input[type=text] {
+        border: 1px solid #ccc;
+    }
+}
+
+/* Search Bar*/
+.search {
+    background-color: blue;
+    width: 5%;
+    display: contents;
+    align-content: baseline;
+}
+
+.center {
+    text-align: center;
+}
+
+.columns {
+    columns: 4;
+}
+
+.center_image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #037CA4;
+    border: 5px double #FE5904;
+}
+
+.careers {
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+.box_ {
+    background-color: #037CA4;
+    margin: 10%;
+    border: double 10px #FE5904;
+}

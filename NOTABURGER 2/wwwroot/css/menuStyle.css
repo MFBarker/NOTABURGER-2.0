@@ -1,0 +1,185 @@
+﻿@charset "UTF-8";
+/* FONTS */
+@font-face {
+    font-family: NotAFont2;
+    src: url('whatafont/whata2.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2e;
+    src: url('whatafont/whata2e.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2i;
+    src: url('whatafont/whata2i.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2s;
+    src: url('whatafont/whata2s.ttf');
+}
+
+
+button {
+    margin-bottom: 10px;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+    /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+    .active, .collapsible:hover {
+        background-color: #ccc;
+    }
+
+    .collapsible:after {
+        content: '\02795'; /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        color: white;
+        float: right;
+        margin-left: 5px;
+    }
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.itemInfo {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    color: black;
+    border-radius: 30px;
+    margin-bottom: 5px;
+    font-family: "Comic Sans MS", sans-serif, serif;
+    width: 90%;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.catName {
+    font-size: 25px;
+    text-align: center;
+    margin: 10px 0 15px 0; /* top right bottom left */
+    text-decoration-line: underline;
+}
+
+.nutFacts {
+    max-height: auto;
+}
+
+.shrinkText {
+    font-size: 9.5px;
+}
+
+.nutTable {
+    font-size: 10px;
+    text-align: left;
+}
+
+.item {
+    height: fit-content;
+    margin-bottom: 5px;
+    width: 350px;
+    
+}
+
+td {
+    padding: 0 15px 0 0;
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+}
+
+.tab {
+    display: inline-block;
+    margin-left: 40px;
+}
+
+.amount {
+    cursor: pointer;
+    text-align: center;
+    outline: none;
+    border-radius: 0px;
+}
+
+    .active, .amount:hover {
+        background-color: #ccc;
+    }
+
+.numDisplay {
+    height: 26px;
+    width: 32px;
+    font-size: 1.5rem;
+    padding: 2px;
+    border: 0;
+    text-align: center;
+    box-shadow: none;
+    margin-top: 1px;
+    font-family: azo-sans-web,sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    background: transparent;
+}
+
+.spacer {
+    margin-top: 200px;
+}
+
+.AddButton {
+    height: 50px;
+    width: contain;
+    padding: 2px 5px 2px 5px;
+    margin: 0;
+    text-align: center;
+    font-size: 10px;
+}
+
+.quantity {
+    width: fit-content;
+}
+
+#SecMenuHead {
+    background-color: #7f86be;
+}
+
+#SecMenuBody {
+    background-color: #686868;
+}
+.rotate_image {
+    transform: scaleX(-1);
+}
+.center {
+    /* Center Align */
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.centerTable {
+    /* Center Align */
+    display: block;
+    margin-right: auto;
+    margin-left: 7%;
+}
