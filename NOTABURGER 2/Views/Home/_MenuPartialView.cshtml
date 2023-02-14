@@ -1,0 +1,1093 @@
+﻿@model MenuItem
+
+@*
+        breakfast,
+        biscuitSando,
+        breakfastPlatter,
+        drinks3,
+        drinks4,
+        milk,
+        dessert
+*@
+
+@if (Model.type == "burger")
+{
+    <h2><b>@Model.name</b></h2>
+    <br />
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p>
+            <b>Sandwich Only:</b> $@Model.soloPrice (@Model.soloCal Cal) <br />
+            <b>NotaMeal®:</b> $@Model.mealPrice (@Model.mealCal Cal) <br /> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <div class="itemInfo">
+            <!-- Bread -->
+            <div><b>Bread</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="LargeBun" type="radio" name="bread" value="Large Bun">
+                        <label for="Large Bun">Large Bun</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bread" value="Small Bun">
+                        <label for="Small Bun">Small Bun</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bread" value="Brioche Bun">
+                        <label for="Brioche Bun">Brioche Bun</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bread" value="Texas Toast">
+                        <label for="Texas Toast">Texas Toast</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bread" value="No Bun">
+                        <label for="No Bun">No Bun</label>
+                    </td>
+                </tr>
+            </table>
+            <!-- Extra Patty -->
+            <div><b>Extra Patty</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="patty" type="radio" name="extraPatty" value="Large @Model.pattyType Patty (1)" />
+                        <label for="Large @Model.pattyType Patty">Large @Model.pattyType Patty</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="8" value="1" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <!-- Cheese -->
+            <div><b>Cheese</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="AmCheese" type="checkbox" name="cheese" value="American Cheese" onclick="check_AddOns()" />
+                        <label for="American Cheese">American Cheese</label>
+                        <input type="number" id="AMquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="MnJkCheese" type="checkbox" name="cheese" value="Monterary Jack Cheese" onclick="check_AddOns()" />
+                        <label for="Monterary Jack Cheese">Monterary Jack Cheese</label>
+                        <input type="number" id="MJquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <!-- Add-Ons -->
+            <div><b>Popular Add-Ons</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="addOns" value="Chili" />
+                        <label for="Chili">Chili</label>
+                    </td>
+                    <td>
+                        <input id="Bacon" type="checkbox" name="addOns" value="Bacon Slices" onclick="check_AddOns()" />
+                        <label for="Bacon Slices">Bacon Slices</label>
+                        <input type="number" id="BCNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="Jalapeno" type="checkbox" name="addOns" value="Jalapenos" onclick="check_AddOns()" />
+                        <label for="Jalapenos">Jalapenos</label>
+                        <input type="number" id="JPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="GrJalapenos" type="checkbox" name="addOns" value="Grilled Jalapenos" onclick="check_AddOns()" />
+                        <label for="Grilled Jalapenos">Grilled Jalapenos</label>
+                        <input type="number" id="GrJPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="Avocado" type="checkbox" name="addOns" value="TB_Avocado" onclick="check_AddOns()" />
+                        <label for="Avocado">Avocados</label>
+                        <input type="number" id="AVquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="Chiles" type="checkbox" name="addOns" value="Green TB_Chiles" onclick="check_AddOns()" />
+                        <label for="Green TB_Chiles">Green Chiles</label>
+                        <input type="number" id="GCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <!-- Toppings -->
+            <div><b>Toppings</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="TomatoS" type="checkbox" name="toppings" value="Tomato" onclick="check_Toppings()" />
+                        <label for="Tomato">Tomato</label>
+                        <select name="selection" id="Tomato">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="LettuceS" type="checkbox" name="toppings" value="Lettuce" onclick="check_Toppings()" />
+                        <label for="Lettuce">Lettuce</label>
+                        <select name="selection" id="Lettuce">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="pickles" type="checkbox" name="toppings" value="Pickles" onclick="check_Toppings()" />
+                        <label for="Pickles">Pickles</label>
+                        <select name="selection" id="Pickles">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="onionD" type="checkbox" name="toppings" value="Diced Onions" onclick="check_Toppings()" />
+                        <label for="Diced Onions">Diced Onions</label>
+                        <select name="selection" id="DiOnion">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="GrOnionS" type="checkbox" name="toppings" value="Grilled Onions" onclick="check_Toppings()" />
+                        <label for="Grilled Onions">Grilled Onions</label>
+                        <select name="selection" id="GrOnion">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="FriseeS" type="checkbox" name="toppings" value="Frisée" onclick="check_Toppings()" />
+                        <label for="Frisée">Frisée</label>
+                        <select name="selection" id="Frisee">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <!-- Sauces -->
+            <div><b>Sauces</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="mustard" type="checkbox" name="sauces" value="Mustard" onclick="check_Sauce()" />
+                        <label for="Mustard">Mustard</label>
+                        <select name="selection" id="Mustard">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="Mayonnaise" type="checkbox" name="sauces" value="Mayonnaise" onclick="check_Sauce()" />
+                        <label for="Mayonnaise">Mayonnaise</label>
+                        <select name="selection" id="Mayo">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="TB_KetchupS" type="checkbox" name="sauces" value="Ketchup" onclick="check_Sauce()" />
+                        <label for="Ketchup">Ketchup</label>
+                        <select name="selection" id="Ketchup">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="HoneyBBQ" type="checkbox" name="sauces" value="Honey BBQ" onclick="check_Sauce()" />
+                        <label for="Honey BBQ">Honey BBQ</label>
+                        <select name="selection" id="BBQ">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            @if (Model.name == "GrassBurger")
+            {
+                <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="addClick()" />
+            }
+            else
+            {
+                <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+            }
+        </div>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+            <b>Nutritional Facts:</b>
+            @if (Model.nutTable_solo != null && Model.nutTable_meal != null)
+            {
+                <div class="shrinkText">
+                    <b>Sandwich Only:</b>
+                    @* <table class="nutTable">
+            <tr> <td>Calories: @Model.nutTable_solo[0]</td>          <td>Calories from Fat: @Model.nutTable_solo[1]</td>  <td>Saturated Fat (g): @Model.nutTable_solo[2]</td> </tr>
+            <tr> <td>Trans Fat (g): @Model.nutTable_solo[3]</td>     <td>Cholesterol (g): @Model.nutTable_solo[4]</td>    <td>Sodium (mg): @Model.nutTable_solo[5]</td> </tr>
+            <tr> <td>Dietary Fiber (g): @Model.nutTable_solo[6]</td> <td>Protein (g): @Model.nutTable_solo[7]</td>        <td>Sugars (g): @Model.nutTable_solo[8]</td> </tr>
+            </table>*@
+
+                    <b>Meal:</b>
+                    @*<table class="nutTable">
+            <tr> <td>Calories: @Model.nutTable_meal[0]</td>           <td>Calories from Fat: @Model.nutTable_meal[1]</td>  <td>Saturated Fat (g): @Model.nutTable_meal[2]</td> </tr>
+            <tr> <td>Trans Fat (g): @Model.nutTable_meal[3]</td>      <td>Cholesterol (g): @Model.nutTable_meal[4]</td>    <td>Sodium (mg): @Model.nutTable_meal[5]</td> </tr>
+            <tr> <td>Dietary Fiber (g): @Model.nutTable_meal[6]</td>  <td>Protein (g): @Model.nutTable_meal[7]</td>        <td>Sugars (g): @Model.nutTable_meal[8]</td> </tr>
+            </table>
+            <br />*@
+                </div>
+            }
+            else
+            {
+                <div>Nutritional facts not availible</div>
+            }
+
+        </div>
+
+    </div>
+}
+else if (Model.type == "chickenSando")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            <b>Sandwich Only:</b> $@Model.soloPrice (@Model.soloCal Cal) <br />
+            <b>NotaMeal®:</b> $@Model.mealPrice (@Model.mealCal Cal) <br /> <br />
+            <b>Includes:</b>@Model.includes
+        </p>
+        <div class="itemInfo">
+            <!-- Bread -->
+            <div><b>Bread</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="radio" name="bread" value="Small Bun">
+                        <label for="Small Bun">Small Bun</label>
+                    </td>
+                    <td>
+                        <input id="defaultBread" type="radio" name="bread" value="Brioche Bun">
+                        <label for="Brioche Bun">Brioche Bun</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bread" value="Texas Toast">
+                        <label for="Texas Toast">Texas Toast</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bread" value="No Bun">
+                        <label for="No Bun">No Bun</label>
+                    </td>
+                </tr>
+            </table>
+            <!-- Extra Patty -->
+            <div><b>Extra Patty</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="patty" type="radio" name="extraPatty" value="Large @Model.pattyType Filet" />
+                        <label for="Large @Model.pattyType Filet">Large @Model.pattyType Filet</label>
+                        <input type="number" id="quantity" name="quantity" min="1" max="8" value="1" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <!-- Cheese -->
+            <div><b>Cheese</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="AmCheese" type="checkbox" name="cheese" value="American Cheese" onclick="check_AddOns()" />
+                        <label for="American Cheese">American Cheese</label>
+                        <input type="number" id="AMquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="MnJkCheese" type="checkbox" name="cheese" value="Monterary Jack Cheese" onclick="check_AddOns()" />
+                        <label for="Monterary Jack Cheese">Monterary Jack Cheese</label>
+                        <input type="number" id="MJquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <!-- Add-Ons -->
+            <div><b>Popular Add-Ons</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="addOns" value="Chili" />
+                        <label for="Chili">Chili</label>
+                    </td>
+                    <td>
+                        <input id="Bacon" type="checkbox" name="addOns" value="Bacon Slices" onclick="check_AddOns()" />
+                        <label for="Bacon Slices">Bacon Slices</label>
+                        <input type="number" id="BCNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="Jalapenos" type="checkbox" name="addOns" value="Jalapenos" onclick="check_AddOns()" />
+                        <label for="Jalapenos">Jalapenos</label>
+                        <input type="number" id="JPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="GrJalapenos" type="checkbox" name="addOns" value="Grilled Jalapenos" onclick="check_AddOns()" />
+                        <label for="Grilled Jalapenos">Grilled Jalapenos</label>
+                        <input type="number" id="GrJPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="Avocado" type="checkbox" name="addOns" value="Avocado" onclick="check_AddOns()" />
+                        <label for="TB_Avocado">Avocados</label>
+                        <input type="number" id="AVquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="Chiles" type="checkbox" name="addOns" value="Green Chiles" onclick="check_AddOns()" />
+                        <label for="Green Chiles">Green Chiles</label>
+                        <input type="number" id="GCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <!-- Toppings -->
+            <div><b>Toppings</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="TomatoS" type="checkbox" name="toppings" value="Tomato" onclick="check_Toppings()" />
+                        <label for="Tomato">Tomato</label>
+                        <select name="selection" id="Tomato">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="LeafLettuceS" type="checkbox" name="toppings" value="Lettuce" onclick="check_Toppings()" />
+                        <label for="Lettuce">Lettuce</label>
+                        <select name="selection" id="LeafLettuce">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="pickles" type="checkbox" name="toppings" value="Pickles" onclick="check_Toppings()" />
+                        <label for="Pickles">Pickles</label>
+                        <select name="selection" id="Pickles">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input id="onionD" type="checkbox" name="toppings" value="Diced Onions" onclick="check_Toppings()" />
+                        <label for="Diced Onions">Diced Onions</label>
+                        <select name="selection" id="DiOnion">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="GrOnionS" type="checkbox" name="toppings" value="Grilled Onions" onclick="check_Toppings()" />
+                        <label for="Grilled Onions">Grilled Onions</label>
+                        <select name="selection" id="GrOnion">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="FriseeS" type="checkbox" name="toppings" value="Frisée" onclick="check_Toppings()" />
+                        <label for="Frisée">Frisée</label>
+                        <select name="selection" id="Frisee">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <!-- Sauces -->
+            <div><b>Sauces</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="notASauce" type="checkbox" name="sauces" value="NotASauce" onclick="check_Sauce()" />
+                        <label for="NotASauce">NotASauce</label>
+                        <select name="selection" id="NotASauce">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="mustard" type="checkbox" name="sauces" value="Mustard" onclick="check_Sauce()" />
+                        <label for="Mustard">Mustard</label>
+                        <select name="selection" id="Mustard">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="Mayonnaise" type="checkbox" name="sauces" value="Mayonnaise" onclick="check_Sauce()" />
+                        <label for="Mayonnaise">Mayonnaise</label>
+                        <select name="selection" id="Mayo">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="KetchupS" type="checkbox" name="sauces" value="Ketchup" onclick="check_Sauce()" />
+                        <label for="Ketchup">Ketchup</label>
+                        <select name="selection" id="Ketchup">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input id="HoneyBBQ" type="checkbox" name="sauces" value="Honey BBQ" onclick="check_Sauce()" />
+                        <label for="Honey BBQ">Honey BBQ</label>
+                        <select name="selection" id="BBQ">
+                            <option value="Less">Less</option>
+                            <option value="Regular">Regular</option>
+                            <option value="More">More</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        </div>
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            @if (Model.nutTable_solo != null && Model.nutTable_meal != null)
+            {
+                <div class="shrinkText">
+                    <b>Sandwich Only:</b>
+                    @*<table class="nutTable">
+            <tr> <td>Calories: @Model.nutTable_solo[0]</td>          <td>Calories from Fat: @Model.nutTable_solo[1]</td>  <td>Saturated Fat (g): @Model.nutTable_solo[2]</td> </tr>
+            <tr> <td>Trans Fat (g): @Model.nutTable_solo[3]</td>     <td>Cholesterol (g): @Model.nutTable_solo[4]</td>    <td>Sodium (mg): @Model.nutTable_solo[5]</td> </tr>
+            <tr> <td>Dietary Fiber (g): @Model.nutTable_solo[6]</td> <td>Protein (g): @Model.nutTable_solo[7]</td>        <td>Sugars (g): @Model.nutTable_solo[8]</td> </tr>
+            </table>*@
+
+                    <b>Meal:</b>
+                    @*<table class="nutTable">
+            <tr> <td>Calories: @Model.nutTable_meal[0]</td>           <td>Calories from Fat: @Model.nutTable_meal[1]</td>  <td>Saturated Fat (g): @Model.nutTable_meal[2]</td> </tr>
+            <tr> <td>Trans Fat (g): @Model.nutTable_meal[3]</td>      <td>Cholesterol (g): @Model.nutTable_meal[4]</td>    <td>Sodium (mg): @Model.nutTable_meal[5]</td> </tr>
+            <tr> <td>Dietary Fiber (g): @Model.nutTable_meal[6]</td>  <td>Protein (g): @Model.nutTable_meal[7]</td>        <td>Sugars (g): @Model.nutTable_meal[8]</td> </tr>
+            </table>*@
+                    <br />
+                </div>
+            }
+            else
+            {
+                <div>Nutritional facts not availible</div>
+            }
+
+        </div>
+    </div>
+}
+else if (Model.type == "chicken")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            <b>Tenders Only:</b> $@Model.soloPrice (@Model.soloCal Cal) <br />
+            <b>NotaMeal®:</b> $@Model.mealPrice (@Model.mealCal Cal)<br /> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <table>
+            <tr> <td> <b>Dipping Sauces:</b> </td> </tr>
+            <tr>
+                <td> <input type="radio" id="Gravy" value="Gravy"><label for="Gravy">Gravy</label> </td>
+                <td> <input type="radio" id="HoneyBBQ" value="Honey BBQ"><label for="Honey BBQ">Honey BBQ</label> </td>
+                <td> <input type="radio" id="HoneyButter" value="Honey Butter"><label for="Honey Butter">Honey Butter</label> </td>
+                <td> <input type="radio" id="HoneyMustard" value="Honey Mustard"><label for="Honey Mustard">Honey Mustard Dressing</label> </td>
+            </tr>
+            <tr>
+                <td> <input type="radio" id="JpnRanch" value="Jalapeno Ranch"><label for="Jalapeno Ranch">Jalapeno Ranch</label> </td>
+                <td> <input type="radio" id="Ranch" value="Ranch Dressing"><label for="Ranch Dressing">Ranch Dressing</label> </td>
+                <td> <input type="radio" id="ThousIsland" value="1000 Island Dressing"><label for="1000 Island Dressing">1000 Island Dressing</label> </td>
+                <td> <input type="radio" id="None" value="No Dipping Sauce"><label for="No Dipping Sauce">No Dipping Sauce</label> </td>
+            </tr>
+        </table> <br />
+        <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" asp-controller="Menu" asp-action="DudClick" />
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                <b>Tenders Only:</b>
+                @*<table class="nutTable">
+            <tr> <td>Calories: 550</td>           <td>Calories from Fat: 290</td>   <td>Saturated Fat (g): 7</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>        <td>Cholesterol (g): 60</td>      <td>Sodium (mg): 1370</td> </tr>
+            <tr> <td>Dietary Fiber (g): 3</td>    <td>Protein (g): 25</td>          <td>Sugars (g): 2</td> </tr>
+            </table>*@
+
+                <b>Meal:</b>
+                @*<table class="nutTable">
+            <tr> <td>Calories: 1470</td>          <td>Calories from Fat: 490</td>   <td>Saturated Fat (g): 10</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>        <td>Cholesterol (g): 60</td>      <td>Sodium (mg): 1960</td> </tr>
+            <tr> <td>Dietary Fiber (g): 7</td>    <td>Protein (g): 33</td>          <td>Sugars (g): 111</td> </tr>
+            </table>*@
+                <br />
+            </div>
+        </div>
+    </div>
+}
+else if (Model.type == "sides")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            <table>
+                <tr> <td> <b>Sizes:</b> </td> </tr>
+                @if (Model.name == "fries")
+                {
+                    <tr>
+                        <td> <input type="radio" id="S" value="Small"><label for="Small">Small: $2.39 (280 Cal)</label> </td>
+                        <td> <input type="radio" id="M" value="Medium"><label for="Medium">Medium: $2.69 (420 Cal)</label> </td>
+                        <td> <input type="radio" id="L" value="Large"><label for="Large">Large: $2.99 (560 Cal)</label> </td>
+                    </tr>
+                }
+                else if (Model.name == "onionRings")
+                {
+                    <tr>
+                        <td> <input type="radio" id="M" value="Medium"><label for="Medium">Medium: $2.89 (300 Cal)</label> </td>
+                        <td> <input type="radio" id="L" value="Large"><label for="Large">Large: $3.49 (450 Cal)</label> </td>
+                    </tr>
+                }
+
+            </table> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                @*<table class="nutTable">
+            <tr> <td>Calories: 420</td>           <td>Calories from Fat: 190</td>   <td>Saturated Fat (g): 3</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>        <td>Cholesterol (g): 0</td>       <td>Sodium (mg): 260</td> </tr>
+            <tr> <td>Dietary Fiber (g): 4</td>    <td>Protein (g): 5</td>           <td>Sugars (g): 1</td> </tr>
+            </table>
+            <br />*@
+            </div>
+        </div>
+    </div>
+}
+else if (Model.type == "apple")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            $@Model.soloPrice (@Model.soloCal Cal)<br /> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                @*<table class="nutTable">
+            <tr> <td>Calories: 30</td>            <td>Calories from Fat: 0</td>    <td>Saturated Fat (g): 0</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>        <td>Cholesterol (g): 0</td>      <td>Sodium (mg): 0</td> </tr>
+            <tr> <td>Dietary Fiber (g): 1</td>    <td>Protein (g): 0</td>          <td>Sugars (g): 6</td> </tr>
+            </table>*@
+                <br />
+            </div>
+        </div>
+    </div>
+}
+else if (Model.type == "breakfast")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            $@Model.soloPrice (@Model.soloCal Cal) <br /> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                @*<table class="nutTable">
+            <tr> <td>Calories: 630</td>            <td>Calories from Fat: 150</td>    <td>Saturated Fat (g): 6</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>         <td>Cholesterol (g): 0</td>        <td>Sodium (mg): 1350</td> </tr>
+            <tr> <td>Dietary Fiber (g): 3</td>     <td>Protein (g): 9</td>            <td>Sugars (g): 36</td> </tr>
+            </table>*@
+                <br />
+            </div>
+        </div>
+    </div>
+}
+else if (Model.type == "biscuitSando")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            $@Model.soloPrice (@Model.soloCal Cal) <br /> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <button id="Customize" class="collapsible">Customize!</button>
+        <div class="itemInfo">
+            if(Model.name == "sausageBiscuit")
+            {
+            <!-- Sausage -->
+            <div><b>Sausage</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="SauBis_defaultSausage" type="radio" name="sausage" value="Pork Sausage">
+                        <label for="Pork Sausage">Regular Sausage (Pork)</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="sausage" value="Chicken Sausage">
+                        <label for="Chicken Sausage">Chicken Sausage</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="sausage" value="Turkey Sausage">
+                        <label for="Turkey Sausage">Turkey Sausage</label>
+                    <td>
+                    <td>
+                        <input type="radio" name="sausage" value="Impossible Sausage">
+                        <label for="Impossible Sausage">Impossible Sausage</label>
+                    </td>
+                </tr>
+            </table>
+            }
+            else if(Model.name == "baconBiscuit")
+            {
+            <!-- Bacon -->
+            <div><b>Bacon</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="BacBis_defaultBacon" type="radio" name="bacon" value="Smoked Bacon">
+                        <label for="Smoked Bacon">Smoked Bacon</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bacon" value="Turkey Bacon">
+                        <label for="Turkey Bacon">Turkey Bacon</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bacon" value="Canadian Bacon">
+                        <label for="Canadian Bacon">Canadian Bacon</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="bacon" value="Veggie Bacon">
+                        <label for="Veggie Bacon">Veggie Bacon</label>
+                    </td>
+                </tr>
+            </table>
+            }
+            else if(Model.name == "eggCheeseBiscuit")
+            {
+            <!-- Cheese -->
+            <div><b>Cheese</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="ECBis_AmCheese" type="radio" name="cheese" value="American Cheese" />
+                        <label for="American Cheese">American Cheese</label>
+                    </td>
+                    <td>
+                        <input id="ECBis_MnJkCheese" type="radio" name="cheese" value="Monterary Jack Cheese" />
+                        <label for="Monterary Jack Cheese">Monterary Jack Cheese</label>
+                    </td>
+                    <td>
+                        <input id="ECBis_None" type="radio" name="cheese" value="None" />
+                        <label for="None">No Cheese</label>
+                    </td>
+                </tr>
+            </table>
+            <!-- Add-Ons -->
+            <div><b>Popular Add-Ons</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="ECBis_ACheese" type="checkbox" name="addOns" value="American Cheese" onclick="check_ECBis_AddOns()" />
+                        <label for="American Cheese">American Cheese</label>
+                        <input type="number" id="ECBis_AMquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="ECBis_MJCheese" type="checkbox" name="addOns" value="Monterey Jack Cheese" onclick="check_ECBis_AddOns()" />
+                        <label for="Monterey Jack Cheese">Monterey Jack Cheese</label>
+                        <input type="number" id="ECBis_MJCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="ECBis_Egg" type="checkbox" name="addOns" value="Egg" onclick="check_ECBis_AddOns()" />
+                        <label for="Egg">Extra Egg</label>
+                        <input type="number" id="ECBis_EGGquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="ECBis_Jalapenos" type="checkbox" name="addOns" value="Jalapenos" onclick="check_ECBis_AddOns()" />
+                        <label for="Jalapenos">Jalapenos</label>
+                        <input type="number" id="ECBis_JPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="ECBis_GrJalapenos" type="checkbox" name="addOns" value="Grilled Jalapenos" onclick="check_ECBis_AddOns()" />
+                        <label for="Grilled Jalapenos">Grilled Jalapenos</label>
+                        <input type="number" id="ECBis_GrJPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="ECBis_Avocado" type="checkbox" name="addOns" value="Avocado" onclick="check_ECBis_AddOns()" />
+                        <label for="Avocado">Avocados</label>
+                        <input type="number" id="ECBis_AVquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="ECBis_Chiles" type="checkbox" name="addOns" value="Green Chiles" onclick="check_ECBis_AddOns()" />
+                        <label for="Green Chiles">Green Chiles</label>
+                        <input type="number" id="ECBis_GCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <br />
+            }
+            else if(Model.name == "biscuitSando")
+            {
+            <!-- Protein (Bacon Or Sausage) -->
+            <div><b>Protein (Bacon or Sausage)</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <div id="Bacon">
+                            <input type="radio" name="protein" value="Smoked Bacon"><label for="Smoked Bacon">Smoked Bacon</label>
+                            <input type="radio" name="protein" value="Turkey Bacon"><label for="Turkey Bacon">Turkey Bacon</label>
+                            <input type="radio" name="protein" value="Canadian Bacon"><label for="Canadian Bacon">Canadian Bacon</label>
+                            <input type="radio" name="protein" value="Veggie Bacon"><label for="Veggie Bacon">Veggie Bacon</label>
+                        </div>
+                        <div id="Sausage">
+                            <input id="BisSando_defaultMeat" type="radio" name="protein" value="Pork Sausage"><label for="Pork Sausage">Regular Sausage (Pork)</label>
+                            <input type="radio" name="protein" value="Chicken Sausage"><label for="Chicken Sausage">Chicken Sausage</label>
+                            <input type="radio" name="protein" value="Turkey Sausage"><label for="Turkey Sausage">Turkey Sausage</label>
+                            <input type="radio" name="protein" value="Impossible Sausage"><label for="Impossible Sausage">Impossible Sausage</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- Cheese -->
+            <div><b>Cheese</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="BisSando_AmCheese" type="radio" name="cheese" value="American Cheese" />
+                        <label for="American Cheese">American Cheese</label>
+                    </td>
+                    <td>
+                        <input id="BisSando_MnJkCheese" type="radio" name="cheese" value="Monterary Jack Cheese" />
+                        <label for="Monterary Jack Cheese">Monterary Jack Cheese</label>
+                    </td>
+                    <td>
+                        <input id="BisSando_None" type="radio" name="cheese" value="None" />
+                        <label for="None">No Cheese</label>
+                    </td>
+                </tr>
+            </table>
+            <!-- Egg -->
+            <div><b>Egg</b></div>
+            <input id="BisSando_Egg" type="checkbox" name="addOns" value="Egg" onclick="check_BisSando_AddOns()" />
+            <label for="Egg">Egg</label>
+            <input type="number" id="BisSando_EGGquantity" name="quantity" min="1" max="8" class="quantity">
+            <!-- Add-Ons -->
+            <div><b>Popular Add-Ons</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="BisSando_ACheese" type="checkbox" name="addOns" value="American Cheese" onclick="check_BisSando_AddOns()" />
+                        <label for="American Cheese">American Cheese</label>
+                        <input type="number" id="BisSando_AMquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="BisSando_MJCheese" type="checkbox" name="addOns" value="Monterey Jack Cheese" onclick="check_BisSando_AddOns()" />
+                        <label for="Monterey Jack Cheese">Monterey Jack Cheese</label>
+                        <input type="number" id="BisSando_MJCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="BisSando_Jalapenos" type="checkbox" name="addOns" value="Jalapenos" onclick="check_BisSando_AddOns()" />
+                        <label for="Jalapenos">Jalapenos</label>
+                        <input type="number" id="BisSando_JPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="BisSando_GrJalapenos" type="checkbox" name="addOns" value="Grilled Jalapenos" onclick="check_BisSando_AddOns()" />
+                        <label for="Grilled Jalapenos">Grilled Jalapenos</label>
+                        <input type="number" id="BisSando_GrJPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="BisSando_Avocado" type="checkbox" name="addOns" value="Avocado" onclick="check_BisSando_AddOns()" />
+                        <label for="Avocado">Avocados</label>
+                        <input type="number" id="BisSando_AVquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="BisSando_Chiles" type="checkbox" name="addOns" value="Green Chiles" onclick="check_BisSando_AddOns()" />
+                        <label for="Green Chiles">Green Chiles</label>
+                        <input type="number" id="BisSando_GCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <br />
+            }
+
+            <br />
+            <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        </div>
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                @*<table class="nutTable">
+            <tr> <td>Calories: 340</td>            <td>Calories from Fat: 340</td>    <td>Saturated Fat (g): 15</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>         <td>Cholesterol (g): 30</td>       <td>Sodium (mg): 990</td> </tr>
+            <tr> <td>Dietary Fiber (g): 1</td>     <td>Protein (g): 16</td>           <td>Sugars (g): 2</td> </tr>
+            </table>*@
+                <br />
+            </div>
+        </div>
+    </div>
+}
+else if (Model.type == "breakfastPlatter")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            $@Model.soloPrice (@Model.soloCal Cal) <br /> <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <button id="Customize" class="collapsible">Customize!</button>
+        <div class="itemInfo">
+            <!-- Protein (Bacon Or Sausage) -->
+            <div><b>Protein (Bacon or Sausage)</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <div id="Bacon">
+                            <input id="PP_defaultMeat" type="radio" name="protein" value="Smoked Bacon"><label for="Smoked Bacon">Smoked Bacon</label>
+                            <input type="radio" name="protein" value="Turkey Bacon"><label for="Turkey Bacon">Turkey Bacon</label>
+                            <input type="radio" name="protein" value="Canadian Bacon"><label for="Canadian Bacon">Canadian Bacon</label>
+                            <input type="radio" name="protein" value="Veggie Bacon"><label for="Veggie Bacon">Veggie Bacon</label>
+                        </div>
+                        <div id="Sausage">
+                            <input type="radio" name="protein" value="Pork Sausage"><label for="Pork Sausage">Regular Sausage (Pork)</label>
+                            <input type="radio" name="protein" value="Chicken Sausage"><label for="Chicken Sausage">Chicken Sausage</label>
+                            <input type="radio" name="protein" value="Turkey Sausage"><label for="Turkey Sausage">Turkey Sausage</label>
+                            <input type="radio" name="protein" value="Impossible Sausage"><label for="Impossible Sausage">Impossible Sausage</label>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <!-- Egg -->
+            <div><b>Egg</b></div>
+            <input id="PP_Egg" type="checkbox" name="addOns" value="Egg" onclick="check_PP_AddOns()" />
+            <label for="Egg">Scrambled Egg</label>
+            <input type="number" id="PP_EGGquantity" name="quantity" min="1" max="8" class="quantity">
+            <!-- Add-Ons -->
+            <div><b>Popular Add-Ons</b></div>
+            <table>
+                <tr>
+                    <td>
+                        <input id="PP_Jalapenos" type="checkbox" name="addOns" value="Jalapenos" onclick="check_PP_AddOns()" />
+                        <label for="Jalapenos">Jalapenos</label>
+                        <input type="number" id="PP_JPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="PP_GrJalapenos" type="checkbox" name="addOns" value="Grilled Jalapenos" onclick="check_PP_AddOns()" />
+                        <label for="Grilled Jalapenos">Grilled Jalapenos</label>
+                        <input type="number" id="PP_GrJPNquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="PP_Avocado" type="checkbox" name="addOns" value="Avocado" onclick="check_PP_AddOns()" />
+                        <label for="Avocado">Avocados</label>
+                        <input type="number" id="PP_AVquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                    <td>
+                        <input id="PP_Chiles" type="checkbox" name="addOns" value="Green Chiles" onclick="check_PP_AddOns()" />
+                        <label for="Green Chiles">Green Chiles</label>
+                        <input type="number" id="PP_GCquantity" name="quantity" min="1" max="8" class="quantity">
+                    </td>
+                </tr>
+            </table>
+            <br />
+            <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        </div>
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                @*<table class="nutTable">
+            <tr> <td>Calories: 945</td>            <td>Calories from Fat: 290</td>    <td>Saturated Fat (g): 11</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>         <td>Cholesterol (g): 25</td>       <td>Sodium (mg): 1620</td> </tr>
+            <tr> <td>Dietary Fiber (g): 3</td>     <td>Protein (g): 23</td>           <td>Sugars (g): 56</td> </tr>
+            </table>*@
+                <br />
+            </div>
+        </div>
+    </div>
+}
+else if (Model.type == "drinks3")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        @if (Model.name == "coffee")
+        {
+            <p id="Prices">
+                <table>
+                    <tr> <td> <b>Sizes:</b> </td> </tr>
+                    <tr>
+                        <td><input type="radio" name="size-S" value="Small"><label for="Small">Small (12 oz): $1.59 (5 Cal)</label></td>
+                        <td><input type="radio" id="Coffee_M" name="size-M" value="Medium"><label for="Medium">Medium (16 oz): $1.89 (0 Cal)</label></td>
+                        <td><input type="radio" name="size-L" value="Large"><label for="Large">Large (20 oz): $2.19 (0 Cal)</label></td>
+                    </tr>
+                    <tr> <td> <b>Flavors:</b> </td> </tr>
+                    <tr>
+                        <td><input type="radio" name="coffee" value="Regular"><label for="Regular">Regular</label></td>
+                        <td><input type="radio" name="coffee" value="Decaf"><label for="Decaf">Decaf</label></td>
+                    </tr>
+                </table>
+                <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+            </p>
+        }
+        else if (Model.name == "shakes")
+        {
+            <p>
+                <div><b>Contains:</b> Milk </div>
+                <table>
+                    <tr> <td> <b>Sizes:</b> </td> </tr>
+                    <tr>
+                        <td><input type="radio" name="size-S" value="Small"><label for="Small">Small (16 oz): $2.99 (400-430 Cal)</label></td>
+                        <td><input type="radio" id="Shakes_M" name="size-M" value="Medium"><label for="Medium">Medium (20 oz): $3.49 (500-550 Cal)</label></td>
+                        <td><input type="radio" name="size-L" value="Large"><label for="Large">Large (32 oz): $4.19 (800-870 Cal)</label></td>
+                    </tr>
+                    <tr> <td> <b>Flavors:</b> </td></tr>
+                    <tr>
+                        <td><input type="radio" name="shakes" value="Vanilla"><label for="Vanilla">Vanilla</label></td>
+                        <td><input type="radio" name="shakes" value="Chocolate"><label for="Chocolate">Chocolate</label></td>
+                        <td><input type="radio" name="shakes" value="Strawberry"><label for="Strawberry">Strawberry</label></td>
+                    </tr>
+                </table>
+                <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+            </p>
+        }
+    </div>
+}
+else if (Model.type == "drinks4")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            <div>
+                <div>
+                    <b>Sizes:</b> <br />
+                    <input type="radio" name="size-K" value="Kids"><label for="Kids">Kids (16 oz): $1.69 (0-220 Cal)</label>
+                    <input type="radio" name="size-S" value="Small"><label for="Small">Small (20 oz): $2.19 (0-280 Cal)</label>
+                    <input type="radio" id="Soda_M" name="size-M" value="Medium"><label for="Medium">Medium (32 oz): $2.49 (0-440 Cal)</label>
+                    <input type="radio" name="size-L" value="Large"><label for="Large">Large (44 oz): $2.79 (0-610 Cal)</label>
+                </div>
+            </div>
+            <table>
+                <tr> <td> <b>Flavors:</b> </td> </tr>
+                @if (Model.name == "soda")
+                {
+                    <tr>
+                        <!-- AMOGUS -->
+                        <td><input type="radio" name="soda" value="Coke"><label for="Coke">Coca-Cola</label> </td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Diet Coke</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Coke Zero</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Pepsi</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Root Beer</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Orange Fanta</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Strawberry Fanta</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Sierra Mist</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Mtn. Dew</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Sprite</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Grass Soda</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Fruit Punch</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Lemonade</label></td>
+                        <td><input type="radio" name="soda" value="WIP"><label for="WIP">Water</label></td>
+                    </tr>
+                }
+                else if (Model.name == "tea")
+                {
+                    <tr>
+                        <!-- may potentially have to convert to divs -->
+                        <td><input type="radio" name="tea" value="Unsweet"><label for="Unsweet">Unsweet Tea</label></td>
+                        <td><input type="radio" name="tea" value="Sweet"><label for="Sweet">Sweet Tea</label></td>
+                        <td><input type="radio" name="tea" value="Sweet"><label for="Sweet">Half-Sweet Half-Unsweet Tea</label></td>
+                    </tr>
+                }
+            </table>
+            <br />
+            <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+        </p>
+    </div>
+}
+else if (Model.type == "milk")
+{
+    <input type="image" src="Resources/Menu Pictures/Milk.png" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <table>
+            <tr><td><b>Milk:</b></td></tr>
+            <tr>
+                <td>
+                    <div>
+                        <input type="radio" name="milk" value="Milk"><label for="Milk">Regular Milk</label>
+                        <input type="radio" name="milk" value="Milk"><label for="Milk">Chocolate Milk</label>
+                    </div>
+                </td>
+            </tr>
+        </table>
+        <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+    </div>
+}
+else if (Model.type == "dessert")
+{
+    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
+    <div class="itemInfo">
+        <p id="Prices">
+            $@Model.soloPrice (@Model.soloCal Cal.) <br />
+            <b>Includes:</b> @Model.includes
+        </p>
+        <button id="NutFacts" class="collapsible">Nutritional Information</button>
+        <div class="itemInfo">
+            <b>Contains:</b> @Model.allergens <br />
+
+            <b>Nutritional Facts:</b>
+            <div class="shrinkText">
+                @*<table class="nutTable">
+            <tr> <td>Calories: 343</td>           <td>Calories from Fat: 97</td>   <td>Saturated Fat (g): 3</td> </tr>
+            <tr> <td>Trans Fat (g): 0</td>        <td>Cholesterol (g): 0</td>       <td>Sodium (mg): 101</td> </tr>
+            <tr> <td>Dietary Fiber (g): 0</td>    <td>Protein (g): 7</td>           <td>Sugars (g): 35</td> </tr>
+            </table>*@
+                <br />
+            </div>
+        </div>
+        <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center" onclick="dudClick()" />
+    </div>
+}
+else
+{
+    <h5>Error. No Items Availiable.</h5>
+}

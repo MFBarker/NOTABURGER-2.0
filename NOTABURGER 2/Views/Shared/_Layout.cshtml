@@ -3,33 +3,58 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - NOTABURGER_2</title>
+    <title>@ViewData["Title"] - NOTABURGER_2._0</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/NOTABURGER_2.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NOTABURGER_2._0.styles.css" asp-append-version="true" />
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NOTABURGER_2</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+                <input type="image" src="Resources/Notaburger Logo_transparent_text.png" asp-controller="Home" asp-action="Index" width="110" padding="0px" margin="0px" />
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="nav-item topMenu">
+                            <a asp-controller="Home" asp-action="Menu"><strong>Menu</strong></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a asp-controller="Home" asp-action="Careers"><strong>Careers</strong></a>
                         </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Stories"><strong>Stories</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a asp-controller="Home" asp-action="Community"><strong>Community</strong></a>
+                        </li>
+                        <li class="topMenu">
+                            <input id="searchBar" placeholder="Search.." />
+                            <button id="searchBtn" onclick="SearchBar()" class="search"><img src="Resources/searchIcon.png" width="20" /></button>
+                        </li>
+                        <li class="topMenu"> <a href="menu.html"><button><img src="Resources/BagIcon.png" width="15" /><strong>Start Ordering</strong></button></a></li>
                     </ul>
-                    <partial name="_LoginPartial" />
                 </div>
             </div>
         </nav>
+        @*
+        <header>
+        <nav>
+        <div>
+        <ul>
+
+        <li class="topMenu"><a href="careers.html"><strong>Careers</strong></a></li>
+        <li class="topMenu"><a href="stories.html"><strong>Stories</strong></a></li>
+        <li class="topMenu"><a href="community.html"><strong>Community</strong></a></li>
+        <li class="topMenu">
+        <input id="searchBar" placeholder="Search.." />
+        <button id="searchBtn" onclick="SearchBar()" class="search"><img src="Resources/searchIcon.png" width="20" /></button>
+        </li>
+        <li class="topMenu"> <a href="menu.html"><button><img src="Resources/BagIcon.png" width="15" /><strong>Start Ordering</strong></button></a></li>
+        </ul>
+        </div>
+        </nav>
+        </header>
+        *@
     </header>
     <div class="container">
         <main role="main" class="pb-3">
@@ -38,8 +63,59 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2023 - NOTABURGER_2 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        <div class="container text-center" id="bottom">
+            <div class="row">
+                <div class="col">
+                    <p id="footer"><a href="stories.cshtml" id="footer">Company</a></p>
+
+                    <p id="footer"><a href="NOTASTORE.cshtml">Shop NOTASTORE</a></p>
+
+                    <p id="footer"><a href="Menu.html">Ordering & Rewards</a></p>
+
+                    <p id="footer">Connect</p>
+                </div>
+                <div class="col">
+                    <p id="footer"><a href="stories.cshtml">Our History</a></p>
+                    <p id="footer">Apparel</p>
+                    <p id="footer">Buy Gift Card</p>
+                    <p id="footer">MyNotABurger Benefits</p>
+                    <p id="footer">Contact Customer Care</p>
+                </div>
+                <div class="col">
+                    <p id="footer">Press Room</p>
+                    <p id="footer">Kids</p>
+                    <p id="footer">Gift Card Balance</p>
+                    <p id="footer">FAQs</p>
+                    <p id="footer">Sign Up For Emails</p>
+                </div>
+                <div class="col">
+                    <p id="footer">Franchising</p>
+                    <p id="footer">Locations</p>
+                    <p id="footer">Gifts</p>
+                    <p id="footer">My Account</p>
+                    <p id="footer">Fill Out Our Survey</p>
+                </div>
+                <div class="col">
+                    <p id="footer">Portals</p>
+                    <p id="footer">Groceries</p>
+                    <p id="footer">Shipping & Returns</p>
+
+                    <a href="https://www.facebook.com/profile.php?id=100087649245588" target="_blank"><img src="Resources/icnFacebook.png" width="30" />&nbsp;&nbsp;</a>
+                    <a href="https://twitter.com/NotABurger0" target="_blank"><img src="Resources/icnTwitter.png" width="30" />&nbsp;&nbsp;</a>
+                    <a href="" target="_blank"><img src="Resources/icnInstagram.png" width="30" />&nbsp;&nbsp;</a>
+                    <a href="https://www.youtube.com/channel/UCfCUxpbpaH6uKF6cN92s1Mw" target="_blank"><img src="Resources/icnYoutube.png" width="30" />&nbsp;&nbsp;</a>
+                </div>
+
+                <div class="col">
+                    <p id="footer">Contact Us</p>
+                    <p id="footer">Nutritional Information</p>
+                    <p id="footer">Terms & Conditions</p>
+                    <p id="footer">Accessibility Statements</p>
+
+                    <span><img src="Resources/Notaburger Logo_transparent.png" width="60" /></span>
+                </div>
+            </div>
+            &copy; 2023 - NOTABURGER 2.0 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

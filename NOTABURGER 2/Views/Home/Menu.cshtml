@@ -1,0 +1,101 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>NOTABURGER | Menu</title>
+    <link rel="stylesheet" href="Style/menuStyle.css">
+    <link rel="stylesheet" href="Style/StyleSheet.css" />
+    <script src="Scripts/menu_JS.js" defer></script>
+    <script src="Scripts/menu_Customization_JS.js" defer></script>
+    <script src="Scripts/secrets_JS.js" defer></script>
+</head>
+<body>
+    <section>
+        <div class="spacer"></div>
+        <!-- Burgers -->
+        <div class="catName">Burgers</div>
+        @*@foreach (MenuItem item in Model)
+        {
+        if (item.type == "burger")
+        {
+        <partial name="_MoviePartialView.cshtml" for="@item" />
+        }
+        }*@
+
+        <!-- Chicken -->
+        <div class="catName">Chicken</div>
+        @*@foreach (MenuItem item in Model)
+        {
+        if (item.type == "chickenSando" || item.type == "chicken")
+        {
+        <partial name="_MoviePartialView.cshtml" for="@item" />
+        }
+        }*@
+
+        <!-- Sides -->
+        <div class="catName">Sides</div>
+        @*@foreach (MenuItem item in Model)
+        {
+        if (item.type == "sides" || item.type == "apple")
+        {
+        <partial name="_MoviePartialView.cshtml" for="@item" />
+        }
+        }*@
+
+        <!-- Breakfast -->
+        <div class="catName">Breakfast</div>
+        @*@foreach (MenuItem item in Model)
+        {
+        if (item.type == "breakfast" || item.type == "biscuitSando" || item.type == "breakfastPlatter")
+        {
+        <partial name="_MoviePartialView.cshtml" for="@item" />
+        }
+        }*@
+
+        <!-- Drinks and Shakes -->
+        <div class="catName">Drinks and Shakes</div>
+        @*@foreach (MenuItem item in Model)
+        {
+        if (item.type == "drinks3" || item.type == "drinks4" || item.type == "milk")
+        {
+        <partial name="_MoviePartialView.cshtml" for="@item" />
+        }
+        }*@
+
+        <!-- Dessert -->
+        <div class="catName">Desserts</div>
+        @*@foreach (MenuItem item in Model)
+        {
+        if (item.type == "dessert")
+        {
+        <partial name="_MoviePartialView.cshtml" for="@item" />
+        }
+        }*@
+
+        <div>
+            <br /><br /><br /><br /><br /><br />
+        </div>
+    </section>
+    @*<footer padding-top="10px">
+    <nav>
+    <div>
+    <br />
+    <ul>
+    <li class="bottomMenu"><a href="">Contact Us</a></li>
+    <li class="bottomMenu"><a href="">Nutritional Information</a></li>
+    <li class="bottomMenu"><a href="">Terms & Conditions</a></li>
+    <li class="bottomMenu"><a href="">Accessibility Statement</a></li>
+    </ul>
+    <span><img src="Resources/Notaburger Logo_transparent.png" width="60" /></span>
+    <br /><br />
+    </div>
+    </nav>
+    </footer>*@
+</body>
+</html>

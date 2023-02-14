@@ -18,6 +18,25 @@ namespace NOTABURGER_2.Controllers
             return View();
         }
 
+        public IActionResult Menu()
+        {
+            return View();
+        }
+        public IActionResult Careers()
+        {
+            return View();
+        }
+
+        public IActionResult Stories()
+        {
+            return View();
+        }
+
+        public IActionResult Community()
+        {
+            return View();
+        }
+
         public IActionResult Privacy()
         {
             return View();
