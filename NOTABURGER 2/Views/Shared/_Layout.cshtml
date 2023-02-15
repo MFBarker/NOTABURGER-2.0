@@ -1,38 +1,49 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://kit.fontawesome.com/95c027ec8f.css" crossorigin="anonymous">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NOTABURGER_2._0</title>
+    
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/NOTABURGER_2._0.styles.css" asp-append-version="true" />
-    <link rel="stylesheet" href="https://kit.fontawesome.com/95c027ec8f.css" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/95c027ec8f.js" crossorigin="anonymous"></script>
+    
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
-                <input type="image" src="Resources/Notaburger Logo_transparent_text.png" asp-controller="Home" asp-action="Index" width="110" padding="0px" margin="0px" />
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NotABurger</a>
+                @*<input type="image" src="Resources/Notaburger Logo_transparent_text.png" asp-controller="Home" asp-action="Index" width="110" padding="0px" margin="0px" />*@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item topMenu">
-                            <a asp-controller="Home" asp-action="Menu"><strong>Menu</strong></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Menu"><strong>Menu</strong></a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Home" asp-action="Careers"><strong>Careers</strong></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Careers"><strong>Careers</strong></a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Home" asp-action="Stories"><strong>Stories</strong></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Stories"><strong>Stories</strong></a>
                         </li>
                         <li class="nav-item">
-                            <a asp-controller="Home" asp-action="Community"><strong>Community</strong></a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Community"><strong>Community</strong></a>
                         </li>
                         <li class="topMenu">
-                            <input id="searchBar" placeholder="Search.." />
-                            <button id="searchBtn" onclick="SearchBar()" class="search"><img src="Resources/searchIcon.png" width="20" /></button>
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button id="searchBtn" onclick="SearchBar()" class="search btn btn-outline-secondary"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            </form>
+                            
+                            
                         </li>
-                        <li class="topMenu"> <a href="menu.html"><button><img src="Resources/BagIcon.png" width="15" /><strong>Start Ordering</strong></button></a></li>
+                        <li class="topMenu"> 
+                            <a asp-area="" asp-controller="Home" asp-action="Menu" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i>     Start Ordering</a>
+                            @*<a href="menu.html"><button><img src="Resources/BagIcon.png" width="15" /><strong>Start Ordering</strong></button></a>*@
+                          </li>
                     </ul>
                 </div>
             </div>
@@ -100,6 +111,11 @@
                     <p id="footer">Portals</p>
                     <p id="footer">Groceries</p>
                     <p id="footer">Shipping & Returns</p>
+
+                    <a><i class="fa-brands fa-facebook"></i></a>
+                    <a><i class="fa-brands fa-twitter"></i></a>
+                    <a><i class="fa-brands fa-instagram"></i></a>
+                    <a><i class="fa-brands fa-youtube"></i></a>
 
                     <a href="https://www.facebook.com/profile.php?id=100087649245588" target="_blank"><img src="Resources/icnFacebook.png" width="30" />&nbsp;&nbsp;</a>
                     <a href="https://twitter.com/NotABurger0" target="_blank"><img src="Resources/icnTwitter.png" width="30" />&nbsp;&nbsp;</a>
