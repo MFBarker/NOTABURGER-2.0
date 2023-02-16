@@ -46,6 +46,19 @@ namespace NOTABURGER_2.Controllers
         {
             return View();
         }
+        //Social Medias
+        public IActionResult Facebook()
+        {
+            return Redirect("https://www.facebook.com/profile.php?id=100087649245588");
+        }
+        public IActionResult YouTube()
+        {
+            return Redirect("https://www.youtube.com/channel/UCfCUxpbpaH6uKF6cN92s1Mw");
+        }
+        public IActionResult Twitter()
+        {
+            return Redirect("https://twitter.com/NotABurger0");
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
