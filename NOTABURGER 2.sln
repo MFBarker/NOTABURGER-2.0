@@ -5,6 +5,13 @@ VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NOTABURGER 2", "NOTABURGER 2\NOTABURGER 2.csproj", "{349F8D77-B909-4AD9-9C15-E55BE3041BA0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TelerikAPITesting", "TelerikAPITesting\TelerikAPITesting.csproj", "{87D51E37-A096-40AA-B599-9F950694786A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E6377076-F8D1-44A2-AC6B-DB0C4E2D03B2}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,10 +22,10 @@ Global
 		{349F8D77-B909-4AD9-9C15-E55BE3041BA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{349F8D77-B909-4AD9-9C15-E55BE3041BA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{349F8D77-B909-4AD9-9C15-E55BE3041BA0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{910F8DCD-C37F-4A43-B9B4-CD1791221DEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{910F8DCD-C37F-4A43-B9B4-CD1791221DEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{910F8DCD-C37F-4A43-B9B4-CD1791221DEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{910F8DCD-C37F-4A43-B9B4-CD1791221DEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D51E37-A096-40AA-B599-9F950694786A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D51E37-A096-40AA-B599-9F950694786A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D51E37-A096-40AA-B599-9F950694786A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D51E37-A096-40AA-B599-9F950694786A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
