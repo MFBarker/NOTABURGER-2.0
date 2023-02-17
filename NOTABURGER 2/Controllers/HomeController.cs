@@ -46,6 +46,12 @@ namespace NOTABURGER_2.Controllers
         {
             return View();
         }
+
+        public IActionResult SecretMenu()
+        { 
+            return View();
+        }
+
         //Social Medias
         public IActionResult Facebook()
         {
