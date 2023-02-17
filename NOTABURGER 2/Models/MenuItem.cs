@@ -31,15 +31,16 @@ namespace NOTABURGER_2.Models
 
         [Required]
         public float? mealPrice { get; set; }
-
+        [Required]
         public int soloCal { get; set; }
+        [Required]
         public int mealCal { get; set; }
 
         [Required]
         public string? type { get; set; }
         [Required]
         public string? includes { get; set; }
-
+        [Required]
         public string? pattyType { get; set; }
         //nut table - solo
         public int? FatCal_Solo { get; set; }
@@ -60,9 +61,10 @@ namespace NOTABURGER_2.Models
         public int? DietFiber_Meal { get; set; }
         public int? Protein_Meal { get; set; }
         public int? Sugars_Meal { get; set; }
-
+        [Required]
         public string? allergens { get; set; }
 
+        [Required]
         public string? imageSrc { get; set; }
 
         MenuItem() { }
