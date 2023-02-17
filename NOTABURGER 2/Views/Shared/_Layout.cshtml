@@ -132,7 +132,21 @@
                     <p id="footer">Accessibility Statements</p>
                     <p id="secretCode"></p>
 
-                    <span><img src="/images/Notaburger Logo_transparent.png" width="60" /></span>
+                    @if (ViewData["Title"].ToString() == "Secret Menu")
+                    {
+                        <span><img src="/images/Notaburger Logo_transparent.png" width="60" class="rotate_image" onclick="burger()"/></span>
+                        <script>
+                            function burger() {
+                            document.getElementById("secretBurger").src = "/images/Menu Pictures/TongueBurger.png";
+                            document.getElementById("secretText").textContent = "You have been visited by the Tongue Burger.";
+                            }
+                        </script>
+                    }
+                    else
+                    {
+                        <span><img src="/images/Notaburger Logo_transparent.png" width="60" /></span>
+                    }
+                    
                 </div>
             </div>
             &copy; 2023 - NOTABURGER 2.0 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

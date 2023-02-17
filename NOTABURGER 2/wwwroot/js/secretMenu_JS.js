@@ -449,8 +449,8 @@ function check_BBQSando_Sauce() {
 }
 
 
-//secret burger image
-function burger() {
-    document.getElementById("secretBurger").src = "Resources/Menu Pictures/TongueBurger.png";
-    document.getElementById("secretText").textContent = "You have been visited by the Tongue Burger.";
-}
+////secret burger image
+//function burger() {
+//    document.getElementById("secretBurger").src = "/images/Menu Pictures/TongueBurger.png";
+//    document.getElementById("secretText").textContent = "You have been visited by the Tongue Burger.";
+//}
