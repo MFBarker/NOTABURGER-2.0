@@ -39,6 +39,14 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+// temp access to Secret Menu.
+app.MapControllerRoute(
+    name: "SecretMenu",
+    pattern: "secrets",
+
+    defaults: new { controller = "Home", action = "SecretMenu" });
+
 app.MapRazorPages();
 
 app.Run();
