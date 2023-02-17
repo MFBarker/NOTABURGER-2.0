@@ -26,6 +26,10 @@ namespace NOTABURGER_2.Controllers
         {
             return View();
         }
+        public IActionResult CareersSwitch()
+        {
+            return View();
+        }
 
         public IActionResult Stories()
         {
