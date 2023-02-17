@@ -13,6 +13,7 @@ namespace NOTABURGER_2.Controllers
             _logger = logger;
         }
 
+        // main pages
         public IActionResult Index()
         {
             return View();
@@ -41,6 +42,12 @@ namespace NOTABURGER_2.Controllers
             return View();
         }
 
+        public IActionResult Locations() 
+        {
+            return View();
+        }
+
+        // NotAStore and others
         public IActionResult NOTASTORE()
         {
             return View();
@@ -54,6 +61,27 @@ namespace NOTABURGER_2.Controllers
         public IActionResult SecretMenu()
         { 
             return View();
+        }
+
+        public IActionResult Search(string input)
+        {
+            string home = "HOME";
+            string menu = "MENU";
+            string stories = "STORIES";
+            string careers = "CAREERS";
+            string community = "COMMUNITY";
+            string locations = "LOCATIONS";
+
+            if(input != null) 
+            {
+                if (input.ToLower() == home.ToLower()) return View("Index","Home");
+                else if (input.ToLower() == menu.ToLower()) return View("Menu","Home");
+                else if (input.ToLower() == stories.ToLower()) return View("Stories","Home");
+                else if (input.ToLower() == careers.ToLower()) return View("Careers","Home");
+                else if (input.ToLower() == community.ToLower()) return View("Community","Home");
+                else if (input.ToLower() == locations.ToLower()) return View("Locations","Home");
+            }
+            return View("Index","Home");
         }
 
         //Social Medias

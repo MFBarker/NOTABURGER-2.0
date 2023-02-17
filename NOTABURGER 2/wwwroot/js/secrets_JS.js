@@ -80,37 +80,38 @@ function Hidden_Stories() {
     }
 }
 
-function SearchBar() {
-    const input = document.getElementById('searchBar').value;
-    let secret_code = "676574206675636B65647LQY-FXA7-EEYG-LDQNvH568-2QTB-KVWY-379LRJET-H93B-R2NB-CG99NKKS-L6Q6-ET3X-S6FQ";
+//no longer needed
+//function SearchBar() {
+//    const input = document.getElementById('searchBar').value;
+//    let secret_code = "676574206675636B65647LQY-FXA7-EEYG-LDQNvH568-2QTB-KVWY-379LRJET-H93B-R2NB-CG99NKKS-L6Q6-ET3X-S6FQ";
 
-    searchBtn.addEventListener('click', function () {
-        if (input == secret_code) {
-            window.location.href = 'secretMenu.html';
-        }
+//    searchBtn.addEventListener('click', function () {
+//        if (input == secret_code) {
+//            window.location.href = 'secretMenu.html';
+//        }
 
-        // Search bar for normal menu
-        if (input == "community" || input == "Community") {
-            window.location.href = 'community.html';
-        }
+//        // Search bar for normal menu
+//        if (input == "community" || input == "Community") {
+//            window.location.href = 'community.html';
+//        }
 
-        if (input == "stories" || input == "Stories") {
-            window.location.href = 'stories.html';
-        }
+//        if (input == "stories" || input == "Stories") {
+//            window.location.href = 'stories.html';
+//        }
 
-        if (input == "menu" || input == "Menu") {
-            window.location.href = 'menu.html';
-        }
+//        if (input == "menu" || input == "Menu") {
+//            window.location.href = 'menu.html';
+//        }
 
-        if (input == "careers" || input == "Careers") {
-            window.location.href = 'careers.html';
-        }
+//        if (input == "careers" || input == "Careers") {
+//            window.location.href = 'careers.html';
+//        }
 
-        if (input == "locations" || input == "Locations") {
-            window.location.href = 'locations.html';
-        }
+//        if (input == "locations" || input == "Locations") {
+//            window.location.href = 'locations.html';
+//        }
 
-    });
+//    });
 
 
 
