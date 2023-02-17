@@ -20,17 +20,18 @@ namespace NOTABURGER_2.Models
     //}
     public class MenuItem
     {
-        //[Key]
-        public int? id { get; set; }
+        [Key]
+        [Required]
+        public int id { get; set; }
 
         [Required]
-        public string? name { get; set; }
+        public string name { get; set; }
 
         [Required]
-        public float? soloPrice { get; set; }
+        public float soloPrice { get; set; }
 
         [Required]
-        public float? mealPrice { get; set; }
+        public float mealPrice { get; set; }
 
         public int soloCal { get; set; }
         public int mealCal { get; set; }

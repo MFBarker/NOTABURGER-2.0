@@ -5,6 +5,7 @@ namespace NOTABURGER_2.Models
     public class Customer
     {
         [Key]
+        [Required]
         public int CustomerId { get; set; }
 
         public string Name { get; set; }
