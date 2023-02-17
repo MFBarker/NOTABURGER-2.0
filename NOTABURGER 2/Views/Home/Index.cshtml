@@ -16,49 +16,45 @@
 <body>
     <!-- MAIN BODY -->
     <div class="contentHome">
-        <nav>
-            <section>
-                <img src="Resources/GrassBurger Homepage.png" class="mainHomepage" />
-                <a href="menu.html" class="mainButton1"><font size="+3">order here &rarr;</font></a>
+        
+        <img src="Resources/GrassBurger Homepage.png" class="mainHomepage" />
+        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="menu">Order Here <i class="fa-solid fa-arrow-right"></i></a>
 
-                <img src="Resources/Stories Homepage.png" class="mainHomepage" />
-                <a href="stories.html" class="mainButton2"><font size="+2">LEARN MORE</font></a>
+        <img src="Resources/Stories Homepage.png" class="mainHomepage" />
+        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Stories">LEARN MORE</a>
 
-                <img src="Resources/HelpUs.png" class="mainHomepage" />
-                <a href="community.html" class="mainButton3"><font size="+1">LEARN MORE</font></a>
+        <img src="Resources/HelpUs.png" class="mainHomepage" />
+        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Community">LEARN MORE</font></a>
 
-                <table class="table2">
-                    <tr>
-                        <td><i class="fa-solid fa-newspaper"></i></td>
-                        <td><i class="fa-solid fa-briefcase"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong><font size="+2">Stories</font></strong></td>
-                        <td><strong><font size="+2">Careers</font></strong></td>
-                    </tr>
-                    <tr class="hidden">
-                        <th>&lt;&gt;</th>
-                        <th>&lt;&gt;</th>
-                    </tr>
-                    <tr>
-                        <td>See what's cooking at Notaburger�,</td>
-                        <td>Discover opportunities at the restaurants,</td>
-                    </tr>
-                    <tr>
-                        <td>including the latest stories, news, and events.</td>
-                        <td>home office, and in the field.</td>
-                    </tr>
-                    <tr class="hidden">
-                        <th>&lt;&gt;</th>
-                        <th>&lt;&gt;</th>
-                    </tr>
-                    <tr>
-                        <td><a href="stories.html"><strong><font size="+2">See More &rarr;</font></strong></a></td>
-                        <td><a href="careers.html"><strong><font size="+2">See Openings &rarr;</font></strong></a></td>
-                    </tr>
-                </table>
-            </section>
-        </nav>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <i class="fa-solid fa-newspaper"></i>
+                    <h2>Stories</h2>
+                    <p>See what's cooking at NotABurger</p>
+                    <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Stories">See More <i class="fa-solid fa-arrow-right"></i></a>
+                    
+                </div>
+                <div class="col">
+                    
+                    <i class="fa-solid fa-briefcase"></i>
+                    <h2>Careers</h2>
+                    
+                    <p>
+                        Discover opportunities at the restauraunts,
+                        including the latest stories, news, and events.
+                        <a class="btn btn-primary" asp-area="" asp-controller="Home" asp-action="Careers">See Openings <i class="fa-solid fa-arrow-right"></i></a>
+
+                        
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+                
+            
+        
     </div>
 </body>
 
