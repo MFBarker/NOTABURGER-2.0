@@ -112,10 +112,11 @@
                     <p id="footer">Portals</p>
                     <p id="footer">Groceries</p>
                     <p id="footer">Shipping & Returns</p>
+                    
 
                     <a asp-controller="Home" asp-action="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     <a asp-controller="Home" asp-action="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a><i class="fa-brands fa-instagram"></i></a>
+                    <a><i class="fa-brands fa-instagram" id="igBttn" onclick="Hidden_MainPage()"></i></a>
                     <a asp-controller="Home" asp-action="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
 
                     @*<a href="https://www.facebook.com/profile.php?id=100087649245588" target="_blank"><img src="Resources/icnFacebook.png" width="30" />&nbsp;&nbsp;</a>
@@ -129,6 +130,7 @@
                     <p id="footer">Nutritional Information</p>
                     <p id="footer">Terms & Conditions</p>
                     <p id="footer">Accessibility Statements</p>
+                    <p id="secretCode"></p>
 
                     <span><img src="/images/Notaburger Logo_transparent.png" width="60" /></span>
                 </div>
