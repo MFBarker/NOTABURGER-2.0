@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/StyleSheet.css" asp-append-version="true"/>
-    <link rel="stylesheet" href="~/NOTABURGER_2._0.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NOTABURGER_2.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/95c027ec8f.js" crossorigin="anonymous"></script>
 
     
@@ -19,24 +19,24 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NotABurger</a>
-                @*<input type="image" src="Resources/Notaburger Logo_transparent_text.png" asp-controller="Home" asp-action="Index" width="110" padding="0px" margin="0px" />*@
+                @*<input type="image" src="/images/Notaburger Logo_transparent_text.png" asp-controller="Home" asp-action="Index" width="110" padding="0px" margin="0px" />*@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item topMenu">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Menu"><strong>Menu</strong></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item topMenu">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Careers"><strong>Careers</strong></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item topMenu">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Stories"><strong>Stories</strong></a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item topMenu">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Community"><strong>Community</strong></a>
                         </li>
                         <li class="topMenu">
-                            <form class="d-flex" role="search">
-                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                            <form class="d-flex" role="search" asp-controller="Home" asp-action="Search" method="post">
+                                <input class="form-control me-2" type="search" placeholder="Search" name="input" aria-label="Search">
                                 <button id="searchBtn" onclick="SearchBar()" class="search btn btn-outline-secondary"><i class="fa-solid fa-magnifying-glass"></i></button>
                             </form>
                             
@@ -114,10 +114,10 @@
                     <p id="footer">Groceries</p>
                     <p id="footer">Shipping & Returns</p>
 
-                    <a href="https://www.facebook.com/profile.php?id=100087649245588"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="https://twitter.com/NotABurger0"><i class="fa-brands fa-twitter"></i></a>
-                    <i class="fa-brands fa-instagram"></i>
-                    <a href ="https://www.youtube.com/channel/UCfCUxpbpaH6uKF6cN92s1Mw"><i class="fa-brands fa-youtube"></i></a>
+                    <a><i class="fa-brands fa-facebook"></i></a>
+                    <a><i class="fa-brands fa-twitter"></i></a>
+                    <a><i class="fa-brands fa-instagram"></i></a>
+                    <a><i class="fa-brands fa-youtube"></i></a>
 
                     @*<a href="https://www.facebook.com/profile.php?id=100087649245588" target="_blank"><img src="Resources/icnFacebook.png" width="30" />&nbsp;&nbsp;</a>
                     <a href="https://twitter.com/NotABurger0" target="_blank"><img src="Resources/icnTwitter.png" width="30" />&nbsp;&nbsp;</a>
@@ -130,8 +130,23 @@
                     <p id="footer">Nutritional Information</p>
                     <p id="footer">Terms & Conditions</p>
                     <p id="footer">Accessibility Statements</p>
+                    <p id="secretCode"></p>
 
-                    <span><img src="Resources/Notaburger Logo_transparent.png" width="60" /></span>
+                    @if (ViewData["Title"].ToString() == "Secret Menu")
+                    {
+                        <span><img src="/images/Notaburger Logo_transparent.png" width="60" class="rotate_image" onclick="burger()"/></span>
+                        <script>
+                            function burger() {
+                            document.getElementById("secretBurger").src = "/images/Menu Pictures/TongueBurger.png";
+                            document.getElementById("secretText").textContent = "You have been visited by the Tongue Burger.";
+                            }
+                        </script>
+                    }
+                    else
+                    {
+                        <span><img src="/images/Notaburger Logo_transparent.png" width="60" /></span>
+                    }
+                    
                 </div>
             </div>
             &copy; 2023 - NOTABURGER 2.0 - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

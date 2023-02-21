@@ -19,15 +19,15 @@ document.getElementById("defaultOpen").click();
 
 // Code 1
 function Hidden_Careers() {
-    if (document.getElementById("imgClickChange").src = "Resources/Victim2_.png") {
+    if (document.getElementById("imgClickChange").src = "/images/Victim2_.png") {
         document.getElementById("title").innerText = "MessedUpWrld Forum"
 
-        document.getElementById("imgClickChange").src = "Resources/Victim2Edit.png";
-        document.getElementById("employee1").src = "Resources/Employee(1)Edit.png";
-        document.getElementById("employee2").src = "Resources/Employee(2)Edit.png";
-        document.getElementById("employee3").src = "Resources/Employee(3)Edit.png";
-        document.getElementById("employee4").src = "Resources/Employee(4)Edit.png";
-        document.getElementById("employee5").src = "Resources/Employee(5)Edit.png";
+        document.getElementById("imgClickChange").src = "/images/Victim2Edit.png";
+        document.getElementById("employee1").src = "/images/Employee(1)Edit.png";
+        document.getElementById("employee2").src = "/images/Employee(2)Edit.png";
+        document.getElementById("employee3").src = "/images/Employee(3)Edit.png";
+        document.getElementById("employee4").src = "/images/Employee(4)Edit.png";
+        document.getElementById("employee5").src = "/images/Employee(5)Edit.png";
 
         // Employee 1 text
         document.getElementById("employeeTranscript1").innerText = "UAreWhatUEat:";
@@ -59,7 +59,7 @@ function Hidden_Community() {
     const button_ = document.getElementById('button_');
     button_.addEventListener('click', function () {
         document.getElementById('secret').innerText = "========================= 2.) 7LQY-FXA7-EEYG-LDQNv =========================";
-        document.getElementById('imgMissing').src = "Resources/Newspaper.png"
+        document.getElementById('imgMissing').src = "/images/Newspaper.png"
     });
 }
 
@@ -73,44 +73,45 @@ function Hidden_MainPage() {
 
 // Code 5
 function Hidden_Stories() {
-    if (document.getElementById("imgFounders").src = "Resources/Founders.png") {
+    if (document.getElementById("imgFounders").src = "/images/Founders.png") {
         document.getElementById("caption").innerText = "5.) NKKS-L6Q6-ET3X-S6FQ";
         document.getElementById("location").src= "Resources/Victim3CrimeScene.png"
         document.getElementById("scene").innerText = "Someone received the wrong order...";
     }
 }
 
-function SearchBar() {
-    const input = document.getElementById('searchBar').value;
-    let secret_code = "676574206675636B65647LQY-FXA7-EEYG-LDQNvH568-2QTB-KVWY-379LRJET-H93B-R2NB-CG99NKKS-L6Q6-ET3X-S6FQ";
+//no longer needed
+//function SearchBar() {
+//    const input = document.getElementById('searchBar').value;
+//    let secret_code = "676574206675636B65647LQY-FXA7-EEYG-LDQNvH568-2QTB-KVWY-379LRJET-H93B-R2NB-CG99NKKS-L6Q6-ET3X-S6FQ";
 
-    searchBtn.addEventListener('click', function () {
-        if (input == secret_code) {
-            window.location.href = 'secretMenu.html';
-        }
+//    searchBtn.addEventListener('click', function () {
+//        if (input == secret_code) {
+//            window.location.href = 'secretMenu.html';
+//        }
 
-        // Search bar for normal menu
-        if (input == "community" || input == "Community") {
-            window.location.href = 'community.html';
-        }
+//        // Search bar for normal menu
+//        if (input == "community" || input == "Community") {
+//            window.location.href = 'community.html';
+//        }
 
-        if (input == "stories" || input == "Stories") {
-            window.location.href = 'stories.html';
-        }
+//        if (input == "stories" || input == "Stories") {
+//            window.location.href = 'stories.html';
+//        }
 
-        if (input == "menu" || input == "Menu") {
-            window.location.href = 'menu.html';
-        }
+//        if (input == "menu" || input == "Menu") {
+//            window.location.href = 'menu.html';
+//        }
 
-        if (input == "careers" || input == "Careers") {
-            window.location.href = 'careers.html';
-        }
+//        if (input == "careers" || input == "Careers") {
+//            window.location.href = 'careers.html';
+//        }
 
-        if (input == "locations" || input == "Locations") {
-            window.location.href = 'locations.html';
-        }
+//        if (input == "locations" || input == "Locations") {
+//            window.location.href = 'locations.html';
+//        }
 
-    });
+//    });
 
 
 
