@@ -20,26 +20,28 @@ namespace NOTABURGER_2.Models
     //}
     public class MenuItem
     {
-        //[Key]
-        public int? id { get; set; }
+        [Key]
+        [Required]
+        public int id { get; set; }
 
         [Required]
-        public string? name { get; set; }
+        public string name { get; set; }
 
         [Required]
-        public float? soloPrice { get; set; }
+        public float soloPrice { get; set; }
 
         [Required]
         public float? mealPrice { get; set; }
-
+        [Required]
         public int soloCal { get; set; }
+        [Required]
         public int mealCal { get; set; }
 
         [Required]
         public string? type { get; set; }
         [Required]
         public string? includes { get; set; }
-
+        [Required]
         public string? pattyType { get; set; }
         //nut table - solo
         public int? FatCal_Solo { get; set; }
@@ -60,9 +62,10 @@ namespace NOTABURGER_2.Models
         public int? DietFiber_Meal { get; set; }
         public int? Protein_Meal { get; set; }
         public int? Sugars_Meal { get; set; }
-
+        [Required]
         public string? allergens { get; set; }
 
+        [Required]
         public string? imageSrc { get; set; }
 
         MenuItem() { }
