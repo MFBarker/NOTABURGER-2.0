@@ -53,6 +53,7 @@ namespace NOTABURGER_2.Controllers
             return View();
         }
 
+        //temp for secret menu
         public IActionResult SecretMenu()
         { 
             return View();
