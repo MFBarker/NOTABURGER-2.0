@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="~/NOTABURGER_2.styles.css" asp-append-version="true" />
     <script src="https://kit.fontawesome.com/95c027ec8f.js" crossorigin="anonymous"></script>
 
+    
+
 </head>
 <body class="bg-dark">
     <header class="text-bg-primary">
@@ -32,6 +34,9 @@
                         </li>
                         <li class="nav-item topMenu">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Community"><strong>Community</strong></a>
+                        </li>
+                        <li class="nav-item topMenu">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Rewards"><strong>Rewards</strong></a>
                         </li>
 
                     </ul>
@@ -88,10 +93,11 @@
                     <p id="footer">Groceries</p>
                     <p id="footer">Shipping & Returns</p>
 
-                    <a asp-controller="Home" asp-action="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                    <a asp-controller="Home" asp-action="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a><i class="fa-brands fa-instagram" id="igBttn" onclick="Hidden_MainPage()"></i></a>
-                    <a asp-controller="Home" asp-action="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                    <a><i class="fa-brands fa-facebook"></i></a>
+                    <a><i class="fa-brands fa-twitter"></i></a>
+                    <a><i class="fa-brands fa-instagram"></i></a>
+                    <a><i class="fa-brands fa-youtube"></i></a>
+
                 </div>
 
                 <div class="col">
@@ -101,7 +107,8 @@
                     <p id="footer">Accessibility Statements</p>
                     <p id="secretCode"></p>
 
-                    @if (ViewData["Title"].ToString() == "Secret Menu")
+@*  TONGUE BURGER                
+    @if (ViewData["Title"].ToString() == "Secret Menu")
                     {
                         <span><img src="/images/Notaburger Logo_transparent.png" width="60" class="rotate_image" onclick="burger()" /></span>
                         <script>
@@ -114,7 +121,7 @@
                     else
                     {
                         <span><img src="/images/Notaburger Logo_transparent.png" width="60" /></span>
-                    }
+                    }*@
 
                 </div>
             </div>
@@ -124,6 +131,7 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 
