@@ -1,30 +1,5 @@
-﻿/* FONTS */
-@font-face {
-    font-family: NotAFont2;
-    src: url('whatafont/whata2.ttf');
-}
+﻿
 
-@font-face {
-    font-family: NotAFont2e;
-    src: url('whatafont/whata2e.ttf');
-}
-
-@font-face {
-    font-family: NotAFont2i;
-    src: url('whatafont/whata2i.ttf');
-}
-
-@font-face {
-    font-family: NotAFont2s;
-    src: url('whatafont/whata2s.ttf');
-}
-
-
-html {
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-}
 
 header {
     padding: 0px;

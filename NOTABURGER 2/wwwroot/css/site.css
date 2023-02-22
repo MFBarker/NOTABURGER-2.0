@@ -2,10 +2,41 @@ html {
   font-size: 14px;
 }
 
+
+/* FONTS */
+@font-face {
+    font-family: NotAFont2;
+    src: url('whatafont/whata2.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2e;
+    src: url('whatafont/whata2e.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2i;
+    src: url('whatafont/whata2i.ttf');
+}
+
+@font-face {
+    font-family: NotAFont2s;
+    src: url('whatafont/whata2s.ttf');
+}
+
+h1 {
+    font-family: NotAFont2s;
+}
+
 @media (min-width: 768px) {
   html {
     font-size: 16px;
+
   }
+}
+
+header {
+    font-family: NotAFont2i;
 }
 
 html {

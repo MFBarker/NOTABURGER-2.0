@@ -1,89 +1,51 @@
 ﻿@{
     ViewData["Title"] = "Community";
 }
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>NOTABURGER | Community</title>
-
-</head>
-
-
-
+<link rel="stylesheet" href="~/css/L.css" asp-append-version="true" />
 <body>
-    <section>
-        <div class="space"></div>
-        <div class="tab">
 
-            <button class="tablinks active" onclick="Programs(event, 'Dining')" id="defaultOpen">Dining Programs</button>
-            <button class="tablinks" onclick="Programs(event, 'Missing')" id="defaultOpen">Missing Programs</button>
+    <div class="headerL">
+        <h2>Blog Name</h2>
+    </div>
 
+    <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Dec 7, 2017</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
+            <div class="card">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Sep 2, 2017</h5>
+                <div class="fakeimg" style="height:200px;">Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+            </div>
         </div>
-    </section>
-
-    <div id="Dining" class="tabcontent">
-        <section>
-            <img class="img_" src="/images/DiningProgramPage.png" />
-            <h1>  ========================= Get them full and ready! ========================= </h1>
-            <h4>
-                We are here for all of our communities, that includes giving to our schools or local teams. For coaches and educators we're here
-                to feed everyone and keep them strong and ready to come back home with glory. The NotABurger Dining Program is a handy program to
-                feed groups fast and eliminating the need to pay with cash while getting good savings.
-            </h4>
-        </section>
-        <!-- REASONS -->
-        <section>
-            <h1>  ========================= Why Sign Up? ========================= </h1>
-            <ul class="bigdot">
-                <li>
-                    <h2><strong>No Cash!</strong></h2>
-                    <h4> No need to pay with cash,when ordering all you need is credit card or invoice. </h4>
-
-                </li>
-
-                <li>
-                    <h2><strong>Low Prices!</strong></h2>
-                    <h4> You won't have to pay full price for all our items! Order minimum up to 100 people to make sure everyone is full and ready to go!</h4>
-                </li>
-                <li>
-                    <h2><strong>No Wait!</strong></h2>
-                    <h4>
-                        We understand if your group is on a rush to go win that championship, so call us! We will be prepared with a simple call letting us know what time,
-                        location and group size!
-                    </h4>
-                </li>
-            </ul>
-        </section>
-
-        <!-- HOW TO SIGN -->
-        <section>
-            <h1>  ========================= How To Join ========================= </h1>
-            <h4>
-                It is simple! Apply by going to your nearest NotABurger and asking for the application, fill it out and return it to us.
-                You will then access to an account to do both pickups, deliveries or in person orders for your orginization!
-            </h4>
-        </section>
-        <section> Offer valid at participating locations only. Minimum of 100 orders. Limited substitutions available. No addons. Offer not valid with any other offer.</section>
-
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Me</h2>
+                <div class="fakeimg" style="height:100px;">Image</div>
+                <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            </div>
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div><br>
+                <div class="fakeimg">Image</div>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
     </div>
 
-    <!-- MISSING PROGRAM -->
-    <div id="Missing" class="tabcontent">
-        <section>
-            <img id="imgMissing" class="img_" src="/images/Missing.jpg" />
-            <h1 id="secret">  ========================= Your Help Is Needed! ========================= </h1>
-            <h2>
-                NotABurger is here to help along the National Missing and Unidentified Persons (NamUS) to recover people.
-                More than <button id="button_" class="secret_"><strong>600,000</strong></button> people go missing each year, from kidnappings to accidents, approximately 4,400 bodies are recovered each year.
-                Don't allow people or communities to be part of this statistics, make a change by keeping an eye out! If you see something, say something!
-            </h2>
-        </section>
-
+    <div class="footer">
+        <h2>Footer</h2>
     </div>
-
 
 </body>
-
-</html>
