@@ -12,7 +12,7 @@
 
 </head>
 <body>
-    <section>
+    <section class="text-white">
         <div class="spacer">
             <br />
             <br />
@@ -21,64 +21,81 @@
         </div>
         <!-- Burgers -->
         <div class="catName">Burgers</div>
-        @*@foreach (MenuItem item in Model)
-        {
-        if (item.type == "burger")
-        {
-        <partial name="_MoviePartialView.cshtml" for="@item" />
-        }
-        }*@
-
+        <grid>
+            @*@foreach (MenuItem item in Model)
+            {
+            if (item.type == "burger")
+            {
+            <partial name="_MenuPartialView.cshtml" for="@item" />
+            }
+            }*@
+        </grid>
+        
         <!-- Chicken -->
         <div class="catName">Chicken</div>
-        @*@foreach (MenuItem item in Model)
-        {
-        if (item.type == "chickenSando" || item.type == "chicken")
-        {
-        <partial name="_MoviePartialView.cshtml" for="@item" />
-        }
-        }*@
+        <grid>
+            @*@foreach (MenuItem item in Model)
+            {
+            if (item.type == "chickenSando" || item.type == "chicken")
+            {
+            <partial name="_MenuPartialView.cshtml" for="@item" />
+            }
+            }*@
+        </grid>
+        
 
         <!-- Sides -->
         <div class="catName">Sides</div>
-        @*@foreach (MenuItem item in Model)
-        {
-        if (item.type == "sides" || item.type == "apple")
-        {
-        <partial name="_MoviePartialView.cshtml" for="@item" />
-        }
-        }*@
+        <grid>
+            @*@foreach (MenuItem item in Model)
+            {
+            if (item.type == "sides" || item.type == "apple")
+            {
+            <partial name="_MenuPartialView.cshtml" for="@item" />
+            }
+            }*@
+        </grid>
+        
 
         <!-- Breakfast -->
         <div class="catName">Breakfast</div>
-        @*@foreach (MenuItem item in Model)
-        {
-        if (item.type == "breakfast" || item.type == "biscuitSando" || item.type == "breakfastPlatter")
-        {
-        <partial name="_MoviePartialView.cshtml" for="@item" />
-        }
-        }*@
+        <grid>
+            @*@foreach (MenuItem item in Model)
+            {
+            if (item.type == "breakfast" || item.type == "biscuitSando" || item.type == "breakfastPlatter")
+            {
+            <partial name="_MenuPartialView.cshtml" for="@item" />
+            }
+            }*@
+        </grid>
+        
 
         <!-- Drinks and Shakes -->
         <div class="catName">Drinks and Shakes</div>
-        @*@foreach (MenuItem item in Model)
-        {
-        if (item.type == "drinks3" || item.type == "drinks4" || item.type == "milk")
-        {
-        <partial name="_MoviePartialView.cshtml" for="@item" />
-        }
-        }*@
+        <grid>
+            @*@foreach (MenuItem item in Model)
+            {
+            if (item.type == "drinks3" || item.type == "drinks4" || item.type == "milk")
+            {
+            <partial name="_MenuPartialView.cshtml" for="@item" />
+            }
+            }*@
+        </grid>
+       
 
         <!-- Dessert -->
         <div class="catName">Desserts</div>
-        @*@foreach (MenuItem item in Model)
-        {
-        if (item.type == "dessert")
-        {
-        <partial name="_MoviePartialView.cshtml" for="@item" />
-        }
-        }*@
-
+        <grid>
+            @*@foreach (MenuItem item in Model)
+            {
+            if (item.type == "dessert")
+            {
+            <partial name="_MenuPartialView.cshtml" for="@item" />
+            }
+            }*@
+        </grid>
+       
+ 
         <div>
             <br /><br /><br /><br /><br /><br />
         </div>

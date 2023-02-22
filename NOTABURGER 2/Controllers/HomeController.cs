@@ -37,7 +37,7 @@ namespace NOTABURGER_2.Controllers
             return View();
         }
 
-        public IActionResult Locations() 
+        public IActionResult Rewards() 
         {
             return View();
         }
