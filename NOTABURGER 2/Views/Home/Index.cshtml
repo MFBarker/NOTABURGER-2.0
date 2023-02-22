@@ -10,55 +10,66 @@
     <title>NOTABURGER | Home</title>
 </head>
 
-<!-- TABS -->
-<body>
-    <!-- MAIN BODY -->
-    <div class="contentHome">
-        <nav>
-            <section>
-                <img src="Resources/GrassBurger Homepage.png" class="mainHomepage" />
-                <a href="menu.html" class="mainButton1"><font size="+3">order here &rarr;</font></a>
 
-                <img src="Resources/Stories Homepage.png" class="mainHomepage" />
-                <a href="stories.html" class="mainButton2"><font size="+2">LEARN MORE</font></a>
 
-                <img src="Resources/HelpUs.png" class="mainHomepage" />
-                <a href="community.html" class="mainButton3"><font size="+1">LEARN MORE</font></a>
-
-                <table class="table2">
-                    <tr>
-                        <td><i class="fa-solid fa-newspaper"></i></td>
-                        <td><i class="fa-solid fa-briefcase"></i></td>
-                    </tr>
-                    <tr>
-                        <td><strong><font size="+2">Stories</font></strong></td>
-                        <td><strong><font size="+2">Careers</font></strong></td>
-                    </tr>
-                    <tr class="hidden">
-                        <th>&lt;&gt;</th>
-                        <th>&lt;&gt;</th>
-                    </tr>
-                    <tr>
-                        <td>See what's cooking at Notaburger�,</td>
-                        <td>Discover opportunities at the restaurants,</td>
-                    </tr>
-                    <tr>
-                        <td>including the latest stories, news, and events.</td>
-                        <td>home office, and in the field.</td>
-                    </tr>
-                    <tr class="hidden">
-                        <th>&lt;&gt;</th>
-                        <th>&lt;&gt;</th>
-                    </tr>
-                    <tr>
-                        <td><a href="stories.html"><strong><font size="+2">See More &rarr;</font></strong></a></td>
-                        <td><a href="careers.html"><strong><font size="+2">See Openings &rarr;</font></strong></a></td>
-                    </tr>
-                </table>
-            </section>
-        </nav>
+<div class="container-fluid">
+    <h1 class="text-center">Whataburger</h1>
+    <img src="http://via.placeholder.com/600x220" />
+    <div class="row">
+        <div class="col">
+            <h2 >Menu</h2>
+            <img src="http://via.placeholder.com/220x220" />
+            
+            <br />
+            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Menu">Order Here</a>
+            <br/>
+            <br/>
+            <br/>
+            <h2 >Stories</h2>
+            <img src="http://via.placeholder.com/220x220" />
+            <i class="fa-solid fa-newspaper"></i>
+            <p>
+                See what's cooking at Notaburger,
+                Discover opportunities at the restaurants,
+                including the latest stories, news, and events.
+                home office, and in the field.
+            </p>
+            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Stories">Learn More</a>
+            <br/>
+            
+            <h2><a asp-area="" asp-controller="Home" asp-action="Stories">See More!</a></h2>
+        </div>
+        <div class="col">
+            <h2 >Stories</h2>
+            <img src="http://via.placeholder.com/220x220" />
+            
+            <br />
+            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Stories">Learn More</a>
+            <br/>
+            <br/>
+            <br/>
+            <h2 >Community</h2>
+            <p>Zombies reversus ab inferno, nam malum cerebro. 
+                De carne animata corpora quaeritis. Summus sit​​, 
+                morbo vel maleficia? De Apocalypsi undead dictum 
+                mauris. Hi mortuis soulless creaturas, imo monstra 
+                adventus vultus comedat cerebella viventium. 
+                Qui offenderit rapto, terribilem incessu. 
+                The voodoo sacerdos suscitat mortuos comedere 
+                carnem. Search for solum oculi eorum defunctis cerebro.
+                Nescio an Undead zombies. Sicut malus movie horror.</p>
+                
+                <br/>
+            
+            <h2><i class="fa-solid fa-briefcase"> <a asp-area="" asp-controller="Home" asp-action="Careers"></a></h2>
+             
+            <br/>
+            <h2><a asp-area="" asp-controller="Home" asp-action="Careers">See Openings</a></h2>
+        </div>
     </div>
-</body>
+    
+</div>
+
 
 </html>
 

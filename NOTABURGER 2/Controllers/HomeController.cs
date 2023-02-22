@@ -37,6 +37,7 @@ namespace NOTABURGER_2.Controllers
             return View();
         }
 
+        [Route("benefits")]
         public IActionResult Rewards() 
         {
             return View();
