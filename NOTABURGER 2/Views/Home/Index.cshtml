@@ -14,7 +14,28 @@
 
 <div class="container-fluid">
     <h1 class="text-center">Whataburger</h1>
-    <img src="http://via.placeholder.com/600x220" />
+    <div id="carouselExample" class="carousel slide">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <img src="http://via.placeholder.com/720x220" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="http://via.placeholder.com/720x220" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+    <img src="http://via.placeholder.com/720x220" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+
     <div class="row">
         <div class="col">
             <h2 >Menu</h2>
@@ -27,20 +48,22 @@
             <br/>
             <h2 >Stories</h2>
             <img src="http://via.placeholder.com/220x220" />
-            <i class="fa-solid fa-newspaper"></i>
+            
+            <br/>
+            
             <p>
                 See what's cooking at Notaburger,
                 Discover opportunities at the restaurants,
                 including the latest stories, news, and events.
                 home office, and in the field.
             </p>
-            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Stories">Learn More</a>
+            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Stories"><i class="fa-solid fa-newspaper"></i>  Learn More</a>
             <br/>
             
-            <h2><a asp-area="" asp-controller="Home" asp-action="Stories">See More!</a></h2>
+            
         </div>
         <div class="col">
-            <h2 >Stories</h2>
+            <h2 >Rewards</h2>
             <img src="http://via.placeholder.com/220x220" />
             
             <br />
@@ -59,12 +82,9 @@
                 carnem. Search for solum oculi eorum defunctis cerebro.
                 Nescio an Undead zombies. Sicut malus movie horror.</p>
                 
-                <br/>
-            
-            <h2><i class="fa-solid fa-briefcase"> <a asp-area="" asp-controller="Home" asp-action="Careers"></a></h2>
-             
             <br/>
-            <h2><a asp-area="" asp-controller="Home" asp-action="Careers">See Openings</a></h2>
+            <br/>
+            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Careers"><i class="fa-solid fa-briefcase"> See Openings</a>
         </div>
     </div>
     
