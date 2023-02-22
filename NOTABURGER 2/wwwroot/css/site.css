@@ -11,6 +11,15 @@ html {
 html {
   position: relative;
   min-height: 100%;
+  
+}
+h1, h2, p {
+    color: white;
+    
+}
+
+p{
+    color: white;
 }
 
 body {
