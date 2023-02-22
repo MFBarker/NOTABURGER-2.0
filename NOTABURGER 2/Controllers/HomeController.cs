@@ -19,19 +19,22 @@ namespace NOTABURGER_2.Controllers
             return View();
         }
 
+        [Route("Menu")]
         public IActionResult Menu()
         {
             return View();
         }
+        [Route("Careers")]
         public IActionResult Careers()
         {
             return View();
         }
+        [Route("Stories")]
         public IActionResult Stories()
         {
             return View();
         }
-
+        [Route("Community")]
         public IActionResult Community()
         {
             return View();
@@ -44,11 +47,12 @@ namespace NOTABURGER_2.Controllers
         }
 
         // NotAStore and others
+        [Route("NotAStore")]
         public IActionResult NOTASTORE()
         {
             return View();
         }
-
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();

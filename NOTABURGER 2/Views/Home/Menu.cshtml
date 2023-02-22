@@ -13,10 +13,7 @@
 </head>
 <body>
     <section class="text-white">
-        <div class="spacer">
-            <br />
-            <br />
-            <br />
+        <div>
             <br />
         </div>
         <!-- Burgers -->
@@ -24,7 +21,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type == "burger")
+            if (item.type.ToLower() == "burger")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
@@ -36,7 +33,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type == "chickenSando" || item.type == "chicken")
+            if (item.type.ToLower() == "chickenSando" || item.type.ToLower() == "chicken")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
@@ -49,7 +46,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type == "sides" || item.type == "apple")
+            if (item.type.ToLower() == "sides" || item.type.ToLower() == "apple")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
@@ -62,7 +59,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type == "breakfast" || item.type == "biscuitSando" || item.type == "breakfastPlatter")
+            if (item.type.ToLower() == "breakfast" || item.type.ToLower() == "biscuitSando" || item.type.ToLower() == "breakfastPlatter")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
@@ -75,7 +72,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type == "drinks3" || item.type == "drinks4" || item.type == "milk")
+            if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
@@ -88,7 +85,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type == "dessert")
+            if (item.type.ToLower() == "dessert")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
