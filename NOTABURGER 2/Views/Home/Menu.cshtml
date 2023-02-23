@@ -19,25 +19,25 @@
         <!-- Burgers -->
         <div class="catName">Burgers</div>
         <grid>
-            @*@foreach (MenuItem item in Model)
+            @foreach (MenuItem item in Model)
             {
-            if (item.type.ToLower() == "burger")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
+                if (item.type.ToLower() == "burger")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
             }
-            }*@
         </grid>
         
         <!-- Chicken -->
         <div class="catName">Chicken</div>
         <grid>
-            @*@foreach (MenuItem item in Model)
+            @foreach (MenuItem item in Model)
             {
-            if (item.type.ToLower() == "chickenSando" || item.type.ToLower() == "chicken")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
+                if (item.type.ToLower() == "chickensando" || item.type.ToLower() == "chicken")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
             }
-            }*@
         </grid>
         
 
@@ -59,7 +59,7 @@
         <grid>
             @*@foreach (MenuItem item in Model)
             {
-            if (item.type.ToLower() == "breakfast" || item.type.ToLower() == "biscuitSando" || item.type.ToLower() == "breakfastPlatter")
+            if (item.type.ToLower() == "breakfast" || item.type.ToLower() == "biscuitsando" || item.type.ToLower() == "breakfastplatter")
             {
             <partial name="_MenuPartialView.cshtml" for="@item" />
             }
