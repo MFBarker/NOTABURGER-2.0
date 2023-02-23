@@ -47,6 +47,8 @@
                         <button id="searchBtn" onclick="SearchBar()" class="search btn btn-outline-secondary"><i class="fa-solid fa-magnifying-glass"></i></button>
                     </form>
                     <a asp-area="" asp-controller="Home" asp-action="Menu" class="btn btn-primary"><i class="fa-solid fa-bag-shopping"></i>     Start Ordering</a>
+                    @* temp for login*@
+                    <partial name="_LoginPartial" /> 
                 </div>
             </div>
         </nav>
@@ -87,7 +89,7 @@
                     <p id="footer">Franchising</p>
                     <p id="footer">Locations</p>
                     <p id="footer">Gifts</p>
-                    <p id="footer">My Account</p>
+                    <p id="footer">My Account</p> @* Goes to Account Managing Page if Logged in, else forces login *@
                     <p id="footer">Fill Out Our Survey</p>
                 </div>
                 <div class="col">
@@ -97,13 +99,10 @@
 
                     <a asp-controller="Home" asp-action="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
                     <a asp-controller="Home" asp-action="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                    <a><i class="fa-brands fa-instagram"></i></a>
+                    <a><i class="fa-brands fa-instagram"></i></a> @* secret *@
                     <a asp-controller="Home" asp-action="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
 
-                    @*<a href="https://www.facebook.com/profile.php?id=100087649245588" target="_blank"><img src="Resources/icnFacebook.png" width="30" />&nbsp;&nbsp;</a>
-                    <a href="https://twitter.com/NotABurger0" target="_blank"><img src="Resources/icnTwitter.png" width="30" />&nbsp;&nbsp;</a>
-                    <a href="" target="_blank"><img src="Resources/icnInstagram.png" width="30" />&nbsp;&nbsp;</a>
-                    <a href="https://www.youtube.com/channel/UCfCUxpbpaH6uKF6cN92s1Mw" target="_blank"><img src="Resources/icnYoutube.png" width="30" />&nbsp;&nbsp;</a>*@
+                    
                 </div>
 
                 <div class="col">
