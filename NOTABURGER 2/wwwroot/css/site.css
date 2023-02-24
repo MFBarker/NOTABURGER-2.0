@@ -44,11 +44,21 @@ html {
   min-height: 100%;
   
 }
-h1, h2, p {
+h1, h2 {
     color: white;
     font-family: NotAFont2s;
 }
 
+p {
+    color: white;
+}
+
 body {
   margin-bottom: 60px;
+}
+
+.img_homepage
+{
+    width: 400px;
+    height: 550px;
 }

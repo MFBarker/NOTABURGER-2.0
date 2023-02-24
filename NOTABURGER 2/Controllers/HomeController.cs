@@ -1,16 +1,17 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
 
 namespace NOTABURGER_2.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        IDataAccessLayer dal;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(IDataAccessLayer indal)
         {
-            _logger = logger;
+            dal = indal;
         }
 
         // main pages
@@ -22,18 +23,21 @@ namespace NOTABURGER_2.Controllers
         [Route("Menu")]
         public IActionResult Menu()
         {
-            return View();
+            return View(dal.GetMenu());
         }
+
         [Route("Careers")]
         public IActionResult Careers()
         {
             return View();
         }
+
         [Route("Stories")]
         public IActionResult Stories()
         {
             return View();
         }
+
         [Route("Community")]
         public IActionResult Community()
         {

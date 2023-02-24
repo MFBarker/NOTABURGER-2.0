@@ -22,7 +22,9 @@
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container-fluid">
                 @*<a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">NotABurger</a>*@
-                <input type="image" src="/images/Notaburger Logo_transparent_text.png" asp-controller="Home" asp-action="Index" width="110" padding="0px" margin="0px" />
+                <form asp-controller="Home" asp-action="Index">
+                    <input type="image" src="/images/Notaburger Logo_transparent_text.png" width="110" padding="0px" margin="0px" />
+                </form>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item topMenu">
