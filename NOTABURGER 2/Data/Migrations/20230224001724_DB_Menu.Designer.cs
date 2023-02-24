@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NOTABURGER_2.Data;
 
@@ -11,9 +12,10 @@ using NOTABURGER_2.Data;
 namespace NOTABURGER_2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230224001724_DB_Menu")]
+    partial class DB_Menu
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -416,6 +418,7 @@ namespace NOTABURGER_2.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<float?>("mealPrice")
+                        .IsRequired()
                         .HasColumnType("real");
 
                     b.Property<string>("name")
