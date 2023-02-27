@@ -65,39 +65,47 @@
         <!-- Breakfast -->
         <div class="catName">Breakfast</div>
         <grid>
-            @*@foreach (MenuItem item in Model)
+            @foreach (MenuItem item in Model)
             {
-            if (item.type.ToLower() == "breakfast" || item.type.ToLower() == "biscuitsando" || item.type.ToLower() == "breakfastplatter")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
+                if (item.type.ToLower() == "breakfast")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+                else if (item.type.ToLower() == "biscuitsando")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+                else if (item.type.ToLower() == "breakfastplatter")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
             }
-            }*@
         </grid>
         
 
         <!-- Drinks and Shakes -->
         <div class="catName">Drinks and Shakes</div>
         <grid>
-            @*@foreach (MenuItem item in Model)
+            @foreach (MenuItem item in Model)
             {
-            if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
+                if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
             }
-            }*@
         </grid>
        
 
         <!-- Dessert -->
         <div class="catName">Desserts</div>
         <grid>
-            @*@foreach (MenuItem item in Model)
+            @foreach (MenuItem item in Model)
             {
-            if (item.type.ToLower() == "dessert")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
+                if (item.type.ToLower() == "dessert")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
             }
-            }*@
         </grid>
        
  
