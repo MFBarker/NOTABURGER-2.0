@@ -34,7 +34,102 @@
             <!--Section: Content-->
 
         </div>
-    </main>
+        <!-- Burgers -->
+        <div class="catName">Burgers</div>
+        <grid>
+            @foreach (MenuItem item in Model)
+            {
+                if (item.type.ToLower() == "burger")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+            }
+        </grid>
+        
+        <!-- Chicken -->
+        <div class="catName">Chicken</div>
+        <grid>
+            @foreach (MenuItem item in Model)
+            {
+                if (item.type.ToLower() == "chickensando")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+                else if (item.type.ToLower() == "chicken")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+            }
+        </grid>
+        
 
+        <!-- Sides -->
+        <div class="catName">Sides</div>
+        <grid>
+            @foreach (MenuItem item in Model)
+            {
+                if (item.type.ToLower() == "sides")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+                else if (item.type.ToLower() == "apple")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+            }
+        </grid>
+        
+
+        <!-- Breakfast -->
+        <div class="catName">Breakfast</div>
+        <grid>
+            @foreach (MenuItem item in Model)
+            {
+                if (item.type.ToLower() == "breakfast")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+                else if (item.type.ToLower() == "biscuitsando")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+                else if (item.type.ToLower() == "breakfastplatter")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+            }
+        </grid>
+        
+
+        <!-- Drinks and Shakes -->
+        <div class="catName">Drinks and Shakes</div>
+        <grid>
+            @foreach (MenuItem item in Model)
+            {
+                if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+            }
+        </grid>
+       
+
+        <!-- Dessert -->
+        <div class="catName">Desserts</div>
+        <grid>
+            @foreach (MenuItem item in Model)
+            {
+                if (item.type.ToLower() == "dessert")
+                {
+                    <partial name="_MenuPartialView.cshtml" for="@item" />
+                }
+            }
+        </grid>
+       
+ 
+        <div>
+            <br /><br /><br /><br /><br /><br />
+        </div>
+    </section>
 </body>
 </html>

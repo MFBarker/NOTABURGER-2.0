@@ -100,7 +100,7 @@ namespace NOTABURGER_2.Data.Migrations
                     mealCal = table.Column<int>(type: "int", nullable: false),
                     type = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     includes = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    pattyType = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    pattyType = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     FatCal_Solo = table.Column<int>(type: "int", nullable: true),
                     SatFat_Solo = table.Column<int>(type: "int", nullable: true),
                     TranFat_Solo = table.Column<int>(type: "int", nullable: true),
