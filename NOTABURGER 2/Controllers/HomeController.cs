@@ -108,5 +108,16 @@ namespace NOTABURGER_2.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        // ROUTING FOR SECRET CODES
+        public IActionResult KohlerVideo()
+        {
+            return Redirect("https://www.youtube.com/watch?v=vEQww6AoSWo");
+        }
+
+        public IActionResult TurroVideo()
+        {
+            return Redirect("https://youtu.be/EMEPiZZ950I");
+        }
     }
 }
