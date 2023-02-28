@@ -47,7 +47,7 @@ app.MapControllerRoute(
 // temp access to Secret Menu.
 app.MapControllerRoute(
     name: "SecretMenu",
-    pattern: "secrets",
+    pattern: "secrets/vEQww6AoSWo/EMEPiZZ950I",
 
     defaults: new { controller = "Home", action = "SecretMenu" });
 
