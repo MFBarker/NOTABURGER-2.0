@@ -1,101 +1,40 @@
 ﻿@{
     ViewData["Title"] = "Menu";
 }
-<!DOCTYPE html>
-
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta charset="utf-8" />
-    <title>NOTABURGER | Menu</title>
-    <link rel="stylesheet" href="/css/menuStyle.css">
-    
-
-</head>
+<html>
 <body>
-    <section class="text-white">
-        <div>
-            <br />
+    <!--Main layout-->
+    <main class="my-5">
+        <div class="container divs divs3">
+            <!--Section: Content-->
+            <section class="text-center">
+                <h4 class="mb-xxl-0 text-white"><strong>Latest posts</strong></h4>
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 mb-4">
+                        <div class="card">
+                            <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+                                <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="img-fluid" />
+                                <a href="#!">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </a>
+                            </div>
+                            <div class="card-body">
+                                <p class="card-text">
+                                    Some quick example text to build on the card title and make up the bulk of the
+                                    card's content.
+                                </p>
+                                <a href="#!" class="btn btn-primary">Read</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!--Section: Content-->
+
         </div>
-        <!-- Burgers -->
-        <div class="catName">Burgers</div>
-        <grid>
-            @*@foreach (MenuItem item in Model)
-            {
-            if (item.type.ToLower() == "burger")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
-            }
-            }*@
-        </grid>
-        
-        <!-- Chicken -->
-        <div class="catName">Chicken</div>
-        <grid>
-            @*@foreach (MenuItem item in Model)
-            {
-            if (item.type.ToLower() == "chickenSando" || item.type.ToLower() == "chicken")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
-            }
-            }*@
-        </grid>
-        
+    </main>
 
-        <!-- Sides -->
-        <div class="catName">Sides</div>
-        <grid>
-            @*@foreach (MenuItem item in Model)
-            {
-            if (item.type.ToLower() == "sides" || item.type.ToLower() == "apple")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
-            }
-            }*@
-        </grid>
-        
-
-        <!-- Breakfast -->
-        <div class="catName">Breakfast</div>
-        <grid>
-            @*@foreach (MenuItem item in Model)
-            {
-            if (item.type.ToLower() == "breakfast" || item.type.ToLower() == "biscuitSando" || item.type.ToLower() == "breakfastPlatter")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
-            }
-            }*@
-        </grid>
-        
-
-        <!-- Drinks and Shakes -->
-        <div class="catName">Drinks and Shakes</div>
-        <grid>
-            @*@foreach (MenuItem item in Model)
-            {
-            if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
-            }
-            }*@
-        </grid>
-       
-
-        <!-- Dessert -->
-        <div class="catName">Desserts</div>
-        <grid>
-            @*@foreach (MenuItem item in Model)
-            {
-            if (item.type.ToLower() == "dessert")
-            {
-            <partial name="_MenuPartialView.cshtml" for="@item" />
-            }
-            }*@
-        </grid>
-       
- 
-        <div>
-            <br /><br /><br /><br /><br /><br />
-        </div>
-    </section>
 </body>
 </html>
