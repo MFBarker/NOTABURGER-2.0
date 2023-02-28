@@ -10,9 +10,8 @@ namespace NOTABURGER_2.Data
         {
         }
 
-        public DbSet<Admin> Admins { get; set; } 
-        public DbSet<Customer> Customers { get; set; } 
-        public DbSet<Employee> Employees { get; set; } 
+        public DbSet<Person> Employees { get; set; } 
         public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<Roles> Roles { get; set; }
     }
 }

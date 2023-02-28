@@ -1,13 +1,15 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-
 namespace NOTABURGER_2.Models
 {
-    public class Admin
+    public class Person
     {
         [Key]
         [Required]
-        public int AdminId { get; set; }
+        public int Id { get; set; }
+
+        [Required]
+        public string Role { get; set; }
         public string Name { get; set; }
 
         public int Age { get; set; }
@@ -22,9 +24,9 @@ namespace NOTABURGER_2.Models
 
         public string Zipcode { get; set; }
 
-        public Admin() { }
+        public Person() { }
 
-        public Admin(string Name, string EPhoneNum, int Age, string Address)
+        public Person(string Name, string EPhoneNum, int Age, string Address)
         {
             this.Name = Name;
             this.Age = Age;
