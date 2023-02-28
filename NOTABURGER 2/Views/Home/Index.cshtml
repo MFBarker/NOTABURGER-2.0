@@ -5,52 +5,52 @@
 <!DOCTYPE html>
 <html>
 <head>
- 
+
 
     <title>NOTABURGER | Home</title>
 </head>
 
 
 
-<div class="container-fluid">
-    <h1 class="text-center">NotABurger</h1>
-    <div id="carouselExample" class="carousel slide">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-                <img src="~/images/NotABurgerGrassBurger.png" class="d-block w-100 img_homepage" alt="...">
+<div class="container-fluid divs divs3">
+    <h1 class="text-center headers_">NotABurger</h1>
+    <div id="carouselExample" class="carousel slide carousel_shadow">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/images/NotABurgerGrassBurger.png" class="d-block w-100 img_homepage " alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/NewItemsHomepage.png" class="d-block w-100 img_homepage " alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="~/images/ScoutBurger.png" class="d-block w-100 img_homepage " alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
     </div>
-    <div class="carousel-item">
-    <img src="http://via.placeholder.com/720x220" class="d-block w-100" alt="...">
-    </div>
-    <div class="carousel-item">
-    <img src="http://via.placeholder.com/720x220" class="d-block w-100" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
-    <div class="row">
-        <div class="col">
-            <h2 >Menu</h2>
-            <img src="http://via.placeholder.com/220x220" />
-            
+    <div class="row divs ">
+        <div class="col div_center ">
+            <h2>Menu</h2>
+            <img class="img_Logos divs2" src="~/images/MenuLogo_HP.png" />
+
             <br />
-            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Menu">Order Here</a>
-            <br/>
-            <br/>
-            <br/>
-            <h2 >Stories</h2>
-            <img src="http://via.placeholder.com/220x220" />
-            
-            <br/>
-            
+            <a class="btn btn-secondary " asp-area="" asp-controller="Home" asp-action="Menu">Order Here</a>
+            <br />
+            <br />
+            <br />
+            <h2>Stories</h2>
+            <img class="img_Logos divs2" src="~/images/HistoryLogo_HP.png" />
+
+            <br />
+
             <p>
                 See what's cooking at Notaburger,
                 Discover opportunities at the restaurants,
@@ -58,28 +58,33 @@
                 home office, and in the field.
             </p>
             <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Stories"><i class="fa-solid fa-newspaper"></i>  Learn More</a>
-            <br/>
-            
-            
+            <br />
+
+
         </div>
-        <div class="col">
-            <h2 >Rewards</h2>
-            <img src="http://via.placeholder.com/220x220" />
-            
+        <div class="col div_center">
+            <h2 class="text-center">Rewards</h2>
+            <img class="img_Logos divs2" src="~/images/RewardsLogo_HP.png" />
+
             <br />
             <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Stories">Learn More</a>
-            <br/>
-            <br/>
-            <br/>
-            <h2 >Community</h2>
-            <p ">Keep up to date what is happening in <strong> YOUR</strong> town! Check what changes your local NotABurgers are doing to keep your community safe and connected.</p>
-                
-            <br/>
-            <br/>
-            <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Careers"><i class="fa-solid fa-briefcase"> See Openings</a>
+            <br />
+            <br />
+            <br />
+            <h2 class="text-center">Community</h2>
+            <img class="img_Logos divs2" src="~/images/CommunityLogo_HP.png" />
+            <p>Keep up to date what is happening in <strong> YOUR </strong> town! Check what changes your local NotABurgers are doing to keep your community safe and connected.</p>
+
+
+        </div>
+        <div class="div_center">
+            <h2 class="text-center">Careers</h2>
+            <img class="img_Logos center_img divs2" style="width: 220px" src="~/images/CareersLogo_HP.png" />
+           @* <a class="btn btn-secondary" asp-area="" asp-controller="Home" asp-action="Careers"><i class="fa-solid fa-briefcase"> See Openings</a> THIS MESSES UP THE FOOTER!!!!*@
+
         </div>
     </div>
-    
+
 </div>
 
 
