@@ -8,7 +8,6 @@ namespace NOTABURGER_2.Models
         [Required]
         public int Id { get; set; }
 
-        [Required]
         public string Role { get; set; }
         public string Name { get; set; }
 
