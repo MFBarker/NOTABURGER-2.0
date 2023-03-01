@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
 
@@ -102,6 +103,16 @@ namespace NOTABURGER_2.Controllers
         {
             return Redirect("https://twitter.com/NotABurger0");
         }
+
+        //Pop Up
+        public IActionResult ShowPopUp(int id)
+        {
+            var menuItem = dal.ReturnItem(id);
+
+            //specify the name or path of the partial view
+            return PartialView("_ModalPartialView", menuItem);
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

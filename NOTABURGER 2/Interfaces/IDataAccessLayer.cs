@@ -4,6 +4,7 @@ namespace NOTABURGER_2.Interfaces
 {
     public interface IDataAccessLayer
     {
-        IEnumerable<MenuItem> GetMenu(); 
+        IEnumerable<MenuItem> GetMenu();
+        MenuItem ReturnItem(int id);
     }
 }
