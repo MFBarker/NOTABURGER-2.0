@@ -1,12 +1,15 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace NOTABURGER_2.Controllers
 {
     public class HomeController : Controller
     {
+        
         IDataAccessLayer dal;
 
         public HomeController(IDataAccessLayer indal)
@@ -108,6 +111,16 @@ namespace NOTABURGER_2.Controllers
             return Redirect("https://twitter.com/NotABurger0");
         }
 
+        //Pop Up
+        public IActionResult ShowPopUp(int id)
+        {
+            var menuItem = dal.ReturnItem(id);
+
+            //specify the name or path of the partial view
+            return PartialView("_ModalPartialView", menuItem);
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
@@ -125,4 +138,6 @@ namespace NOTABURGER_2.Controllers
             return Redirect("https://youtu.be/EMEPiZZ950I");
         }
     }
+    
+    
 }

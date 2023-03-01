@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Net;
+using System.Net.Http;
 using Newtonsoft.Json;
 
 namespace NOTABURGER_2.Models

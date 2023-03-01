@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using NOTABURGER_2.Controllers;
 using NOTABURGER_2.Data;
 using NOTABURGER_2.Interfaces;
 
@@ -17,6 +18,7 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //temp?
     .AddEntityFrameworkStores<ApplicationDbContext>();
 builder.Services.AddControllersWithViews();
+builder.Services.AddSingleton<IZipCodeService, ZipCodeService>();
 
 var app = builder.Build();
 

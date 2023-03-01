@@ -1,5 +1,87 @@
 ﻿@model MenuItem
 
+<div class="col-lg-4 col-md-12 mb-4">
+    <div class="card">
+        <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
+            <img src="@Model.imageSrc" class="img-fluid" />
+            <a href="#!">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+            </a>
+        </div>
+        <div class="card-body">
+            <p class="card-text text-dark">
+                @if (Model.type.ToLower() == "burger" || Model.type.ToLower() == "chickensando")
+                {
+                    <span>
+                        <b>Sandwich Only:</b> $@Model.soloPrice (@Model.soloCal Cal) <br />
+                    </span>
+                }
+                else if (Model.type.ToLower() == "chicken")
+                {
+                    <span>
+                        <b>Tenders Only:</b> $@Model.soloPrice (@Model.soloCal Cal) <br />
+                    </span>
+                }
+                else
+                {
+                    <span>
+                        $@Model.soloPrice (@Model.soloCal Cal) <br />
+                    </span>
+                }
+
+                @if (Model.mealPrice != 0)
+                {
+                    <span>
+                     <b>NotaMeal®:</b> $@Model.mealPrice (@Model.mealCal Cal) <br /> <br />
+                    </span>
+                }
+                
+            </p>
+            <a href="#!" class="btn btn-primary">Add To Cart</a>
+            <button type="button" id="@Model.id" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Details(this.id)">
+                Additional Info
+            </button>
+            <!-- EDIT/DELETE Section -->
+            <div></div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="ModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            @section scripts{
+                <script>
+                    function Details(id) 
+                    {
+                        $.get("@Url.Action("ShowPopUp","Home")/" + id,
+                        function (data) 
+                        {
+                            $('.modal-body').html(data);
+                        });
+
+                        $("#myModal").modal("show");
+                    }
+                </script>
+            }
+        </div>
+    </div>
+</div>
+
+@*
 @if (Model.type.ToLower() == "burger")
 {
     <br />
@@ -1092,4 +1174,4 @@ else if (Model.type.ToLower() == "dessert")
 else
 {
     <h5>Error. No Item Availiable.</h5>
-}
+}*@
