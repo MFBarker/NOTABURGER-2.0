@@ -112,6 +112,7 @@ namespace NOTABURGER_2.Controllers
         }
 
         //Pop Up
+        [Route("ShowPopUp")]
         public IActionResult ShowPopUp(int id)
         {
             var menuItem = dal.ReturnItem(id);
