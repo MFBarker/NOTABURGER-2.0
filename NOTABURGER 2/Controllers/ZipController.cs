@@ -18,6 +18,10 @@ namespace NOTABURGER_2.Controllers
 
         public async Task<IActionResult> GetZip(string country, int zip)
         {
+            if (country == null || zip == 0) { 
+                return View(new List<ZipModel>());
+            }
+
             List<ZipModel> zipcodes = new List<ZipModel>();
             zipcodes = await _zipCodeService.GetLocation(country, zip);
 
