@@ -1,5 +1,9 @@
 ﻿@model MenuItem
 
+<head>
+    <script src="~/js/menu_JS.js"></script>
+</head>
+
 <div class="col-lg-4 col-md-12 mb-4">
     <div class="card">
         <div class="bg-image hover-overlay ripple" data-mdb-ripple-color="light">
@@ -38,14 +42,14 @@
                 
             </p>
             <a href="#!" class="btn btn-primary">Add To Cart</a>
-            <button type="button" id="@Model.id" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Details(this.id)">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#@Model.id">
                 Additional Info
             </button>
             <!-- EDIT/DELETE Section -->
             <div></div>
 
             <!-- Modal -->
-            <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+            <div class="modal fade" id="@Model.id" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
                 <div class="modal-dialog">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -53,8 +57,47 @@
                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
+                            <!-- TEMP -->
+                            <b>Includes:</b> @Model.includes
+                            <br /><br />
+                            <b>Contains:</b> @Model.allergens <br />
+                            <b>Nutritional Facts:</b>
+                            <br />
+                            <div class="shrinkText">
+                                @if (Model.mealCal != 0)
+                                {
+                                    @if (Model.type.ToLower() == "burger" || Model.type.ToLower() == "chickensando")
+                                    {
+                                        <span>
+                                            <b>Sandwich Only:</b>
+                                        </span>
+                                    }
+                                    else if (Model.type.ToLower() == "chicken")
+                                    {
+                                        <span>
+                                            <b>Tenders Only:</b>
+                                        </span>
+                                    }
+                                    <table class="nutTable">
+                                        <tr> <td>Calories: @Model.soloCal</td>                 <td>Calories from Fat: @Model.FatCal_Solo</td>   <td>Saturated Fat (g): @Model.SatFat_Solo</td> </tr>
+                                        <tr> <td>Trans Fat (g): @Model.TranFat_Solo</td>       <td>Cholesterol (g): @Model.Chole_Solo</td>      <td>Sodium (mg): @Model.Sodium_Solo</td> </tr>
+                                        <tr> <td>Dietary Fiber (g): @Model.DietFiber_Solo</td> <td>Protein (g): @Model.Protein_Solo</td>        <td>Sugars (g): @Model.Sugars_Solo</td> </tr>
+                                    </table>
+                                }
+                                @if (Model.mealCal != 0)
+                                {
+                                    <b>Meal:</b>
+                                    <table class="nutTable">
+                                        <tr> <td>Calories: @Model.mealCal</td>                 <td>Calories from Fat: @Model.FatCal_Meal</td>   <td>Saturated Fat (g): @Model.SatFat_Meal</td> </tr>
+                                        <tr> <td>Trans Fat (g): @Model.TranFat_Meal</td>       <td>Cholesterol (g): @Model.Chole_Meal</td>      <td>Sodium (mg): @Model.Sodium_Meal</td> </tr>
+                                        <tr> <td>Dietary Fiber (g): @Model.DietFiber_Meal</td> <td>Protein (g): @Model.Protein_Meal</td>        <td>Sugars (g): @Model.Sugars_Meal</td> </tr>
+                                    </table>
+                                }
+                                <br />
                             
+                            </div>
                         </div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary">Save changes</button>
@@ -65,21 +108,13 @@
 
             @section scripts{
                 <script>
-                    function Details(id) 
-                    {
-                        $.get("@Url.Action("ShowPopUp","Home")/" + id,
-                        function (data) 
-                        {
-                            $('.modal-body').html(data);
-                        });
-
-                        $("#myModal").modal("show");
-                    }
+                    
                 </script>
             }
         </div>
     </div>
 </div>
+
 
 @*
 @if (Model.type.ToLower() == "burger")
