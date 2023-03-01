@@ -1,6 +1,7 @@
 ﻿using System;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
+using NuGet.LibraryModel;
 
 namespace NOTABURGER_2.Data
 {
@@ -13,9 +14,20 @@ namespace NOTABURGER_2.Data
             db = indb;
         }
 
+        public void EditGame(MenuItem item)
+        {
+            db.MenuItems.Update(item);
+            db.SaveChanges();
+        }
+
         public IEnumerable<MenuItem> GetMenu()
         {
             return db.MenuItems.ToList();
+        }
+
+        public MenuItem ReturnItem(int id)
+        {
+            return db.MenuItems.FirstOrDefault(x => x.id == id);
         }
     }
 }
