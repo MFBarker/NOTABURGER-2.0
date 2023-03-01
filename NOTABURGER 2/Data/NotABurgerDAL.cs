@@ -17,5 +17,10 @@ namespace NOTABURGER_2.Data
         {
             return db.MenuItems.ToList();
         }
+
+        public IEnumerable<Person> GetPeople()
+        {
+            return db.Employees.ToList();
+        }
     }
 }

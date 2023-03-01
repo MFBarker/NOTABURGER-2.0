@@ -26,6 +26,11 @@ namespace NOTABURGER_2.Controllers
             return View(dal.GetMenu());
         }
 
+        public IActionResult GetPeople()
+        { 
+            return View(dal.GetPeople()); 
+        }
+
         [Route("Careers")]
         public IActionResult Careers()
         {
