@@ -1,4 +1,5 @@
 ﻿using NOTABURGER_2.Models;
+using NuGet.LibraryModel;
 
 namespace NOTABURGER_2.Interfaces
 {
@@ -6,5 +7,6 @@ namespace NOTABURGER_2.Interfaces
     {
         IEnumerable<MenuItem> GetMenu();
         MenuItem ReturnItem(int id);
+        void EditGame(MenuItem item);
     }
 }
