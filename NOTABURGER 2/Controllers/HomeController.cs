@@ -29,6 +29,11 @@ namespace NOTABURGER_2.Controllers
             return View(dal.GetMenu());
         }
 
+        public IActionResult GetPeople()
+        { 
+            return View(dal.GetPeople()); 
+        }
+
         [Route("Careers")]
         public IActionResult Careers()
         {
@@ -107,6 +112,7 @@ namespace NOTABURGER_2.Controllers
         }
 
         //Pop Up
+        [Route("ShowPopUp")]
         public IActionResult ShowPopUp(int id)
         {
             var menuItem = dal.ReturnItem(id);

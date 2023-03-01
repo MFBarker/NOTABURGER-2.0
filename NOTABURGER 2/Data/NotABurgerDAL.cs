@@ -25,6 +25,11 @@ namespace NOTABURGER_2.Data
             return db.MenuItems.ToList();
         }
 
+        public IEnumerable<Person> GetPeople()
+        {
+            return db.Employees.ToList();
+        }
+
         public MenuItem ReturnItem(int id)
         {
             return db.MenuItems.FirstOrDefault(x => x.id == id);
