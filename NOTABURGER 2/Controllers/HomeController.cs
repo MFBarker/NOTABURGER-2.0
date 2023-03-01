@@ -1,12 +1,16 @@
 ﻿using System.Diagnostics;
+using System.Text.Json;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
+using JsonSerializer = Newtonsoft.Json.JsonSerializer;
 
 namespace NOTABURGER_2.Controllers
 {
     public class HomeController : Controller
     {
+        
         IDataAccessLayer dal;
 
         public HomeController(IDataAccessLayer indal)
@@ -120,4 +124,6 @@ namespace NOTABURGER_2.Controllers
             return Redirect("https://youtu.be/EMEPiZZ950I");
         }
     }
+    
+    
 }
