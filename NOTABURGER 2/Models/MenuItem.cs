@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.Diagnostics;
 
 namespace NOTABURGER_2.Models
 {
@@ -69,7 +68,7 @@ namespace NOTABURGER_2.Models
         MenuItem() { }
 
         MenuItem(string Name, float SoloPrice, float MealPrice, int SoloCal, int MealCal, string type, string includes, string? PattyType, string? imageSrc, string? allergens,
-            int? FatCalS, int? SatFatS, int? TranFatS,int? CholeS,int? SodiumS,int? DietFiberS,int? SugarsS,
+            int? FatCalS, int? SatFatS, int? TranFatS, int? CholeS, int? SodiumS, int? DietFiberS, int? SugarsS,
             int? FatCalM, int? SatFatM, int? TranFatM, int? CholeM, int? SodiumM, int? DietFiberM, int? SugarsM
             )
         {
@@ -87,9 +86,9 @@ namespace NOTABURGER_2.Models
             this.FatCal_Solo = FatCalS;
             this.SatFat_Solo = SatFatS;
             this.TranFat_Solo = TranFatS;
-            this.Chole_Solo= CholeS;
-            this.Sodium_Solo= SodiumS;
-            this.DietFiber_Solo= DietFiberS;
+            this.Chole_Solo = CholeS;
+            this.Sodium_Solo = SodiumS;
+            this.DietFiber_Solo = DietFiberS;
             this.Sugars_Solo = SugarsS;
             //Meal
             this.FatCal_Meal = FatCalM;

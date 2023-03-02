@@ -5,16 +5,17 @@
 }
 @model List<ZipModel>
 <div>
-        <h3>zip code</h3>
-        <form asp-controller="Zip" asp-action="GetZip">
-            <h4>Country Abbreviation: </h4>
-            <input type="text" id="txtCountry" name="CountryAbbreviation" />
-            <h4>Zip Code</h4>
-            <input type="text" id="txtZip" name="Zip" />
-            <a type="submit" class="btn btn-primary" value="Submit">Find Location</a>
+        <h3>Enter Your Zip Code</h3>
+        <form asp-controller="Zip" asp-action="GetZip" method="post">
+            <br/>
+            @*<input type="text" id="country" placeholder="Country Abbreviation" />
+            <br/>*@
+            <input type="search" id="txtZip" placeholder="Zip Code"/>
+            <button type="submit" class="btn btn-primary" value="Submit" >Find Location</button>
         </form>
     </div>
-@if (Model != null && Model.Count > 0)
+@if (Model == null )
+   
 {
             <table class="table table-bordered table-striped table-sm">
                 <thead>
@@ -31,6 +32,7 @@
             @foreach (var item in Model)
             {
                             <tr>
+                                
                                 <td>@Html.DisplayFor(modelItem => item.Country)</td>
                                 <td>@Html.DisplayFor(modelItem => item.City)</td>
                                 <td>@Html.DisplayFor(modelItem => item.State)</td>
@@ -41,4 +43,7 @@
             }
                 </tbody>
             </table>
+}
+else{
+    <h1>No DAta</h1>
 }

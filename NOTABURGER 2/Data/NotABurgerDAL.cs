@@ -1,7 +1,5 @@
-﻿using System;
-using NOTABURGER_2.Interfaces;
+﻿using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
-using NuGet.LibraryModel;
 
 namespace NOTABURGER_2.Data
 {

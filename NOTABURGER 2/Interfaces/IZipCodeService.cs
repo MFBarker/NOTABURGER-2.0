@@ -4,7 +4,7 @@ namespace NOTABURGER_2.Interfaces
 {
     public interface IZipCodeService
     {
-        Task<List<ZipModel>> GetLocation(string country, int zip);
+        Task<List<ZipModel>> GetLocation(int zip);
 
     }
 }
