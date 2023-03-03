@@ -1,0 +1,39 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model List<ZipModel>
+@if (Model != null )
+   
+{
+            <table class="table table-bordered table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>City</th>
+                        <th>State</th>
+                        <th>State Abbreviation</th>
+                        <th>Longitude</th>
+                        <th>Latitude</th>
+                    </tr>
+                </thead>
+                <tbody>
+            @foreach (var item in Model)
+            {
+                            <tr>
+                                
+                                <td>@Html.DisplayFor(modelItem => item.Country)</td>
+                                <td>@Html.DisplayFor(modelItem => item.City)</td>
+                                <td>@Html.DisplayFor(modelItem => item.State)</td>
+                                <td>@Html.DisplayFor(modelItem => item.StateAbbreviation)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Longitude)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Latitude)</td>
+                            </tr>
+            }
+                </tbody>
+            </table>
+}
+else{
+    <h3>No Data</h3>
+}

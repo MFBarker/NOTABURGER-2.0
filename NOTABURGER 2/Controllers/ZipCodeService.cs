@@ -17,9 +17,9 @@ namespace NOTABURGER_2.Controllers
             };
         }
 
-        public async Task<List<ZipModel>> GetLocation(int zip)
+        public async Task<List<ZipModel>> GetLocation(int postalcode)
         {
-            var url = string.Format("/us/{1}", zip);
+            var url = string.Format("/us/{0}", postalcode);
             var result = new List<ZipModel>();
             var response = await client.GetAsync(url);
 
@@ -27,8 +27,8 @@ namespace NOTABURGER_2.Controllers
             {
                 var stringResponse = await response.Content.ReadAsStringAsync();
 
-                result = JsonSerializer.Deserialize<List<ZipModel>>(stringResponse,
-                    new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                //result = JsonSerializer.Deserialize<ZipModel>(stringResponse,
+                //    new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
 
             }
             else

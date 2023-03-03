@@ -16,12 +16,13 @@ namespace NOTABURGER_2.Controllers
             _zipCodeService = zipCodeService;
         }
 
-        public async Task<IActionResult> GetZip(int zip)
+        public async Task<IActionResult> GetZip(string txtZip)
         {
-            if (zip == 0)
+            if (txtZip == null)
             {
                 return View(new List<ZipModel>());
             }
+            int zip = int.Parse(txtZip);
 
             List<ZipModel> zipcodes = new List<ZipModel>();
             zipcodes = await _zipCodeService.GetLocation(zip);
@@ -29,6 +30,24 @@ namespace NOTABURGER_2.Controllers
             return View(zipcodes);
         }
 
+        public async Task<IActionResult> ShowZip(int zipcode)
+        {
+            if (zipcode == 0)
+            {
+                return View(new List<ZipModel>());
+            }
+
+            List<ZipModel> zipcodes = new List<ZipModel>();
+            zipcodes = await _zipCodeService.GetLocation(zipcode);
+
+            return View(zipcodes);
+        }
+
+    }
+
+    public class ZipForm
+    {
+        public string txtZip { get; set; }
     }
 
 }

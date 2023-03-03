@@ -6,44 +6,11 @@
 @model List<ZipModel>
 <div>
         <h3>Enter Your Zip Code</h3>
-        <form asp-controller="Zip" asp-action="GetZip" method="post">
+        <form asp-controller="Zip" asp-action="ShowZip" method="post">
             <br/>
             @*<input type="text" id="country" placeholder="Country Abbreviation" />
             <br/>*@
-            <input type="search" id="txtZip" placeholder="Zip Code"/>
+            <input type="search" id="txtZip" name="zipcode" placeholder="Zip Code"/>
             <button type="submit" class="btn btn-primary" value="Submit" >Find Location</button>
         </form>
     </div>
-@if (Model == null )
-   
-{
-            <table class="table table-bordered table-striped table-sm">
-                <thead>
-                    <tr>
-                        <th>Country</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>State Abbreviation</th>
-                        <th>Longitude</th>
-                        <th>Latitude</th>
-                    </tr>
-                </thead>
-                <tbody>
-            @foreach (var item in Model)
-            {
-                            <tr>
-                                
-                                <td>@Html.DisplayFor(modelItem => item.Country)</td>
-                                <td>@Html.DisplayFor(modelItem => item.City)</td>
-                                <td>@Html.DisplayFor(modelItem => item.State)</td>
-                                <td>@Html.DisplayFor(modelItem => item.StateAbbreviation)</td>
-                                <td>@Html.DisplayFor(modelItem => item.Longitude)</td>
-                                <td>@Html.DisplayFor(modelItem => item.Latitude)</td>
-                            </tr>
-            }
-                </tbody>
-            </table>
-}
-else{
-    <h1>No DAta</h1>
-}
