@@ -6,11 +6,11 @@ namespace NOTABURGER_2.Data
 {
     public class ApplicationDbContext : IdentityDbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options): base(options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
         }
 
-        public DbSet<Person> Employees { get; set; } 
+        public DbSet<Person> Employees { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
         public DbSet<Roles> Roles { get; set; }
     }

@@ -1,15 +1,14 @@
-﻿using System.Diagnostics;
-using System.Text.Json;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
-using JsonSerializer = Newtonsoft.Json.JsonSerializer;
+using System.Diagnostics;
+
 
 namespace NOTABURGER_2.Controllers
 {
     public class HomeController : Controller
     {
-        
+
         IDataAccessLayer dal;
 
         public HomeController(IDataAccessLayer indal)
@@ -30,8 +29,8 @@ namespace NOTABURGER_2.Controllers
         }
 
         public IActionResult GetPeople()
-        { 
-            return View(dal.GetPeople()); 
+        {
+            return View(dal.GetPeople());
         }
 
         [Route("Careers")]
@@ -53,7 +52,7 @@ namespace NOTABURGER_2.Controllers
         }
 
         [Route("benefits")]
-        public IActionResult Rewards() 
+        public IActionResult Rewards()
         {
             return View();
         }
@@ -72,7 +71,7 @@ namespace NOTABURGER_2.Controllers
 
         //temp for secret menu
         public IActionResult SecretMenu()
-        { 
+        {
             return View();
         }
 
@@ -85,16 +84,16 @@ namespace NOTABURGER_2.Controllers
             string community = "COMMUNITY";
             string locations = "LOCATIONS";
 
-            if(input != null) 
+            if (input != null)
             {
-                if (input.ToLower() == home.ToLower()) return View("Index","Home");
-                else if (input.ToLower() == menu.ToLower()) return View("Menu","Home");
-                else if (input.ToLower() == stories.ToLower()) return View("Stories","Home");
-                else if (input.ToLower() == careers.ToLower()) return View("Careers","Home");
-                else if (input.ToLower() == community.ToLower()) return View("Community","Home");
-                else if (input.ToLower() == locations.ToLower()) return View("Locations","Home");
+                if (input.ToLower() == home.ToLower()) return View("Index", "Home");
+                else if (input.ToLower() == menu.ToLower()) return View("Menu", "Home");
+                else if (input.ToLower() == stories.ToLower()) return View("Stories", "Home");
+                else if (input.ToLower() == careers.ToLower()) return View("Careers", "Home");
+                else if (input.ToLower() == community.ToLower()) return View("Community", "Home");
+                else if (input.ToLower() == locations.ToLower()) return View("Locations", "Home");
             }
-            return View("Index","Home");
+            return View("Index", "Home");
         }
 
         //Social Medias
@@ -139,6 +138,6 @@ namespace NOTABURGER_2.Controllers
             return Redirect("https://youtu.be/EMEPiZZ950I");
         }
     }
-    
-    
+
+
 }

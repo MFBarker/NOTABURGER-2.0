@@ -20,6 +20,7 @@ builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.Requ
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IZipCodeService, ZipCodeService>();
 
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

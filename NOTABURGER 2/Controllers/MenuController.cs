@@ -17,7 +17,7 @@ namespace NOTABURGER_2.Controllers
         }
 
         public IActionResult SecretDUD()
-        { 
+        {
             return RedirectToAction("SecretMenu", "Home");
         }
     }
