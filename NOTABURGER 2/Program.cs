@@ -15,8 +15,13 @@ builder.Services.AddTransient<IDataAccessLayer, NotABurgerDAL>();
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false) //temp?
-    .AddEntityFrameworkStores<ApplicationDbContext>();
+builder.Services.AddIdentity<IdentityUser, IdentityRole>(options =>
+options.SignIn.RequireConfirmedAccount =
+false).AddDefaultUI().AddDefaultTokenProviders().AddEntityFrameworkStores<ApplicationDbContext>
+();
+
+builder.Services.AddRazorPages();
+
 builder.Services.AddControllersWithViews();
 builder.Services.AddSingleton<IZipCodeService, ZipCodeService>();
 

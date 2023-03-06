@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
 using System.Diagnostics;
@@ -26,6 +27,13 @@ namespace NOTABURGER_2.Controllers
         public IActionResult Menu()
         {
             return View(dal.GetMenu());
+        }
+
+        [Authorize(Roles = "Administrator")]
+        public class AdministrationController : Controller
+        {
+            public IActionResult Menu() =>
+                Content("Administrator");
         }
 
         public IActionResult GetPeople()
