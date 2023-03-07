@@ -61,12 +61,14 @@
                 <img class="rounded" src="~/images/Founders.png"><a asp-controller="Home" asp-action="Stories" class=" text-dark">Check out our new stories page!</a></img><br>
                 <img class="rounded" src="~/images/Employees (6).png"><a asp-controller="Home" asp-action="Careers" class="text-dark">Join our team!</a></img>
             </div>
-            <div class="card">
+            <div class="card col">
                 <h3 class="text-dark">Follow Us!</h3>
-                <a asp-controller="Home" asp-action="Facebook" target="_blank"><i class="fa-brands fa-facebook"></i></a>
-                <a asp-controller="Home" asp-action="Twitter" target="_blank"><i class="fa-brands fa-twitter"></i></a>
-                <a><i class="fa-brands fa-instagram"></i></a> @* secret *@
-                <a asp-controller="Home" asp-action="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+                <div class="col">
+                    <a asp-controller="Home" asp-action="Facebook" target="_blank"><i class="fa-brands fa-facebook text-dark"></i></a>
+                    <a asp-controller="Home" asp-action="Twitter" target="_blank"><i class="fa-brands fa-twitter text-dark"></i></a>
+                    <a><i class="fa-brands fa-instagram"></i></a> @* secret *@
+                    <a asp-controller="Home" asp-action="YouTube" target="_blank"><i class="fa-brands fa-youtube text-dark"></i></a>
+                </div>
             </div>
         </div>
     </div>
