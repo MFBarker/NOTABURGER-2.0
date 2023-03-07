@@ -2,10 +2,7 @@
     ViewData["Title"] = "Menu";
 }
 <html>
-@if (User.IsInRole("Administrator"))
-{
-}
-else if (User.IsInRole("Employee"))
+@if (User.IsInRole("Administrator") || User.IsInRole("Employee"))
 {
     <html>
     <body>
@@ -114,7 +111,7 @@ else if (User.IsInRole("Employee"))
     </html>
 
 } // TEST
-else if (User.IsInRole("Customer")) // CUSTOMER
+else // CUSTOMER
 {
 
     <html>
