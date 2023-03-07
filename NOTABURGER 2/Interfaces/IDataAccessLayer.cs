@@ -7,8 +7,9 @@ namespace NOTABURGER_2.Interfaces
         IEnumerable<MenuItem> GetMenu();
         MenuItem ReturnItem(int id);
         void Edit(MenuItem item);
-        //IEnumerable<MenuItem> GetMenu();
        
         IEnumerable<Person> GetPeople();
+
+        IEnumerable<SecretMenuItem> GetSecretMenu();
     }
 }

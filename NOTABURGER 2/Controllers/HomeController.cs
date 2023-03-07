@@ -86,7 +86,7 @@ namespace NOTABURGER_2.Controllers
         //temp for secret menu
         public IActionResult SecretMenu()
         {
-            return View();
+            return View(dal.GetSecretMenu());
         }
         public IActionResult Bloopers()
         {

@@ -28,7 +28,10 @@ namespace NOTABURGER_2.Data
             return db.Employees.ToList();
         }
 
-
+        public IEnumerable<SecretMenuItem> GetSecretMenu()
+        {
+            return db.SecretMenuItems.ToList();
+        }
 
         public MenuItem ReturnItem(int id)
         {
