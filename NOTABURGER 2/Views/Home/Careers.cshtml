@@ -2,9 +2,10 @@
     ViewData["Title"] = "Careers";
 }
 
-@if (User.IsInRole("Administrator") || User.IsInRole("Employee"))
+
+@if ((User.IsInRole("Administrator")) || (User.IsInRole("Employee")))
 {
-    <!DOCTYPE html>
+   
     <html>
     <head>
 
@@ -13,7 +14,6 @@
 
 
     <body>
-
 
         <div class="content divs divs3">
             <section class="box_">
@@ -54,7 +54,9 @@
                             </image>
                         </tr>
                         <tr>
-                            <img alt="" class="center_image" src="/images/Victim2_.png" id="imgClickChange" onclick="Hidden_Careers()" width="400" />
+                            <a asp-area="" asp-controller="Home" asp-action = "UserConspiracy">
+                             <img alt="" class="center_image" src="/images/Victim2_.png" id="imgClickChange"  width="400" />
+                             </a>
                             <h1 id="victimTranscript" class="center"> Operating Partner </h1>
                             <h3 id="victimTranscript_" class="center text-white"> Our operating partners receive competitive compensation and benefits packages, including healthcare, retirement plans, and opportunities for bonuses and incentives. We believe in rewarding our partners for their hard work and dedication.</h3>
 
@@ -71,7 +73,7 @@
 }
 else
 {
-    <!DOCTYPE html>
+    
     <html>
     <head>
 
@@ -121,7 +123,7 @@ else
                             </image>
                         </tr>
                         <tr>
-                            <img alt="" class="center_image" src="/images/Victim2_.png" id="imgClickChange" onclick="Hidden_Careers()" width="400" />
+                            <img alt="" class="center_image" src="/images/Victim2_.png" id="imgClickChange"  width="400" />
                             <h1 id="victimTranscript" class="center"> Operating Partner </h1>
                             <h3 id="victimTranscript_" class="center text-white"> Our operating partners receive competitive compensation and benefits packages, including healthcare, retirement plans, and opportunities for bonuses and incentives. We believe in rewarding our partners for their hard work and dedication.</h3>
 
