@@ -12,6 +12,7 @@ namespace NOTABURGER_2.Data
 
         public DbSet<Person> Employees { get; set; }
         public DbSet<MenuItem> MenuItems { get; set; }
+        public DbSet<SecretMenuItem> SecretMenuItems { get; set; }
         public DbSet<Roles> Roles { get; set; }
     }
 }

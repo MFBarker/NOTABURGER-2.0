@@ -1,1 +1,139 @@
-﻿
+﻿@model MenuItem
+
+<form method="post" asp-controller="Menu" asp-action="Edit">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Edit Game</h2>
+            <hr />
+        </div>
+        <div class="mb-3">
+            <label asp-for="name">Item Name</label>
+            <input asp-for="name" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="soloPrice">Solo Price</label>
+            <input asp-for="soloPrice" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="mealPrice">Meal Price</label>
+            <input asp-for="mealPrice" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="soloCal">Solo Cal. Count</label>
+            <input asp-for="soloCal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="mealCal">Meal Cal. Count</label>
+            <input asp-for="mealCal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="type">Type</label>
+            <input asp-for="type" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="includes">Includes</label>
+            <input asp-for="includes" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="pattyType">Patty Type</label>
+            <input asp-for="pattyType" class="form-control" />
+        </div>
+
+        @*-----------------------------------------------------------------------*@
+
+        @*Solo Meal Stuff*@
+        
+        @*-----------------------------------------------------------------------*@
+
+        <div class="mb-3">
+            <label asp-for="FatCal_Solo">Solo Fat Cal.</label>
+            <input asp-for="FatCal_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="SatFat_Solo">Solo Sat. Fat</label>
+            <input asp-for="SatFat_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="TranFat_Solo">Solo Tran. Fat</label>
+            <input asp-for="TranFat_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Chole_Solo">Solo Cholestrol</label>
+            <input asp-for="Chole_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sodium_Solo">Solo Sodium</label>
+            <input asp-for="Sodium_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DietFiber_Solo">Solo Dietary Fiber</label>
+            <input asp-for="DietFiber_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Protein_Solo">Solo Protien</label>
+            <input asp-for="Protein_Solo" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sugars_Solo">Solo Sugars</label>
+            <input asp-for="Sugars_Solo" class="form-control" />
+        </div>
+
+        @*-----------------------------------------------------------------------*@
+
+        @*Meal Stuff*@
+
+        @*-----------------------------------------------------------------------*@
+
+        <div class="mb-3">
+            <label asp-for="FatCal_Meal">Meal Fat Cal.</label>
+            <input asp-for="FatCal_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="SatFat_Meal">Meal Sat. Fat</label>
+            <input asp-for="SatFat_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="TranFat_Meal">Meal Tran. Fat</label>
+            <input asp-for="TranFat_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Chole_Meal">Meal Cholestrol</label>
+            <input asp-for="Chole_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sodium_Meal">Meal Sodium</label>
+            <input asp-for="Sodium_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="DietFiber_Meal">Solo Dietary Fiber</label>
+            <input asp-for="DietFiber_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Protein_Meal">Meal Protien</label>
+            <input asp-for="Protein_Meal" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="Sugars_Meal">Meal Sugars</label>
+            <input asp-for="Sugars_Meal" class="form-control" />
+        </div>
+
+        @*-----------------------------------------------------------------------*@
+
+        <div class="mb-3">
+            <label asp-for="allergens">MAllergens</label>
+            <input asp-for="allergens" class="form-control" />
+        </div>
+        <div class="mb-3">
+            <label asp-for="imageSrc">Image Source</label>
+            <input asp-for="imageSrc" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="bi bi-arrow-clockwise">Update</i>
+        </button>
+
+        <a asp-controller="Menu" asp-action="Menu" class="btn btn-secondary">
+            Back to Menu
+        </a>
+    </div>
+</form>
