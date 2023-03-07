@@ -12,7 +12,7 @@ using NOTABURGER_2.Data;
 namespace NOTABURGER_2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230307054416_secret-menu")]
+    [Migration("20230307182335_secret-menu")]
     partial class secretmenu
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
