@@ -12,7 +12,7 @@ namespace NOTABURGER_2.Data
             db = indb;
         }
 
-        public void EditGame(MenuItem item)
+        public void EditItem(MenuItem item)
         {
             db.MenuItems.Update(item);
             db.SaveChanges();
