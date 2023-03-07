@@ -4,7 +4,7 @@
 
 
 
-@if(User.IsInRole("Administrator"))
+@if(User.IsInRole("Administrator") || User.IsInRole("Employee"))
 {
     <html>
     <head>

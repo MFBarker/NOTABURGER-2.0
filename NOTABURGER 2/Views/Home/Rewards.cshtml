@@ -2,32 +2,109 @@
     ViewData["Title"] = "NOTABURGER | REWARDS";
 }
 
-<div class="container px-4 divs divs3">
-    <div class="row gx-5">
-        <div class="col">
-            <div id="collapseOne" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <h1><a href="https://youtu.be/EMEPiZZ950I"> Why Join? </a></h1>
-                <div class="accordion-body">
-                    Join the NOTABURGER rewards program today and start earning points with every purchase! Our program is designed to reward our most loyal customers with exclusive discounts, free menu items, and other exciting perks. Plus, with our mobile app, you can easily track your rewards and redeem them whenever you want. Don't miss out on the benefits of being a part of the NOTABURGER family - sign up now! <br><br>JOIN US!!!</br></br>
+<link rel="stylesheet" href="~/css/L.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<html>
+@if (User.IsInRole("Administrator") || User.IsInRole("Employee"))
+{
+
+    <div class="container px-4 divs divs3">
+        <div class="div_center divs">
+            <img class="center_img divs2" style="width: 100%" src="~/images/RewardsImg.png" />
+        </div>
+        <br/>
+        <br/>
+        <div class="row gx-5">
+
+            <div class="col divs2">
+                <div id="collapseOne" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <h1><a href="https://youtu.be/EMEPiZZ950I"> Why Join? </a></h1>
+                    <div class="accordion-body">
+                        Join the NOTABURGER rewards program today and start earning points with every purchase! Our program is designed to reward our most loyal customers with exclusive discounts, free menu items, and other exciting perks. Plus, with our mobile app, you can easily track your rewards and redeem them whenever you want. Don't miss out on the benefits of being a part of the NOTABURGER family - sign up now! <br /><br />JOIN US!!!<br />
+
+                    </div>
+                </div>
+            </div>
+            <div class="col divs2">
+                <div id="collapseTwo" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <h1> Offers! </h1>
+                    <div class="accordion-body">
+                        At NOTABURGER, we're all about giving our loyal customers the best deals and exclusive offers. With our rewards program, you can enjoy a range of benefits that are tailored just for you. From free menu items and special discounts to early access to new menu items and events, we've got it all covered. Plus, with our user-friendly mobile app, you can easily keep track of your rewards and redeem them whenever you want. Join our rewards program today and start experiencing the perks of being a part of the NOTABURGER family!
+                    </div>
+                </div>
+            </div>
+            <div class="col divs2">
+                <div id="collapseThree" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <h1> Sign Up! </h1>
+
+                    <div class="accordion-body">
+                        Signing up for the NOTABURGER rewards program is easy! Simply visit us here on our website and follow the prompts to create an account. Once you've signed up, you'll start earning points with every purchase you make. You can then use these points to redeem a range of exciting rewards and exclusive offers. Plus, with our mobile app, you can easily keep track of your rewards and redeem them whenever you want. Join our rewards program today and start enjoying the benefits of being a part of the NOTABURGER family!
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="col">
-            <div id="collapseOne" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <h1> Offers! </h1>
-                <div class="accordion-body">
-                    At NOTABURGER, we're all about giving our loyal customers the best deals and exclusive offers. With our rewards program, you can enjoy a range of benefits that are tailored just for you. From free menu items and special discounts to early access to new menu items and events, we've got it all covered. Plus, with our user-friendly mobile app, you can easily keep track of your rewards and redeem them whenever you want. Join our rewards program today and start experiencing the perks of being a part of the NOTABURGER family!
+        <br />
+        <br />
+        <br />
+        <a class="btn btn-secondary divs2" asp-area="Identity" asp-page="/Account/Register">Register</a>
+
+        <a class="btn btn-secondary divs2" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                <br />
+        <br />
+        <br />
+    </div>
+
+}
+else
+{
+
+    <div class="container px-4 divs divs3 ">
+        <div class="div_center divs">
+            <img class="center_img divs2" style="width: 100%" src="~/images/RewardsImg.png" />
+        </div>
+        <br />
+        <br />
+        <div class="row gx-5 ">
+            <div class="col  divs2">
+                <div id="collapseFour" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <h1> Why Join? </h1>
+                    <div class="accordion-body ">
+                        Join the NOTABURGER rewards program today and start earning points with every purchase! Our program is designed to reward our most loyal customers with exclusive discounts, free menu items, and other exciting perks. Plus, with our mobile app, you can easily track your rewards and redeem them whenever you want. Don't miss out on the benefits of being a part of the NOTABURGER family - sign up now! <br /><br />JOIN US!!!<br />
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col">
-            <div id="collapseOne" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                <h1> Sign Up! </h1>
-                
-                <div class="accordion-body">
-                    Signing up for the NOTABURGER rewards program is easy! Simply visit us here on our website and follow the prompts to create an account. Once you've signed up, you'll start earning points with every purchase you make. You can then use these points to redeem a range of exciting rewards and exclusive offers. Plus, with our mobile app, you can easily keep track of your rewards and redeem them whenever you want. Join our rewards program today and start enjoying the benefits of being a part of the NOTABURGER family!
+            <div class="col divs2">
+                <div id="collapseFive" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <h1> Offers! </h1>
+                    <div class="accordion-body">
+                        At NOTABURGER, we're all about giving our loyal customers the best deals and exclusive offers. With our rewards program, you can enjoy a range of benefits that are tailored just for you. From free menu items and special discounts to early access to new menu items and events, we've got it all covered. Plus, with our user-friendly mobile app, you can easily keep track of your rewards and redeem them whenever you want. Join our rewards program today and start experiencing the perks of being a part of the NOTABURGER family!
+                    </div>
+                </div>
+            </div>
+            <div class="col divs2">
+                <div id="collapseSix" class="accordion-collapse collapse show p-3 border text-lg-center text-light bg-secondary" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                    <h1> Sign Up! </h1>
+
+                    <div class="accordion-body">
+                        Signing up for the NOTABURGER rewards program is easy! Simply visit us here on our website and follow the prompts to create an account. Once you've signed up, you'll start earning points with every purchase you make. You can then use these points to redeem a range of exciting rewards and exclusive offers. Plus, with our mobile app, you can easily keep track of your rewards and redeem them whenever you want. Join our rewards program today and start enjoying the benefits of being a part of the NOTABURGER family!
+                    </div>
+                </div>
+                <div>
+                    <br />
+                    <br />
+                    <br />
+                    <a class="btn btn-secondary center_img divs2" style="width: 100%" asp-area="Identity" asp-page="/Account/Register">Register</a>
+                    <a class="btn btn-secondary center_img divs2" style="width: 100%" asp-area="Identity" asp-page="/Account/Login">Login</a>
+                    <br />
+                    <br />
+                    <br />
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <br />
+
+}
+</html>

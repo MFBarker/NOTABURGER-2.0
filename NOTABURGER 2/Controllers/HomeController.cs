@@ -84,6 +84,7 @@ namespace NOTABURGER_2.Controllers
         }
 
         //temp for secret menu
+        [Authorize (Roles ="Administrator, Employee") ]
         public IActionResult SecretMenu()
         {
             return View();
