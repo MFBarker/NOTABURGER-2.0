@@ -87,7 +87,7 @@ namespace NOTABURGER_2.Controllers
         [Authorize (Roles ="Administrator, Employee") ]
         public IActionResult SecretMenu()
         {
-            return View();
+            return View(dal.GetSecretMenu());
         }
         public IActionResult Bloopers()
         {
