@@ -26,7 +26,7 @@
                         <b>Tenders Only:</b> $@Model.soloPrice (@Model.soloCal Cal) <br />
                     </span>
                 }
-                else if (Model.type.ToLower() == "drinks3" || Model.type.ToLower() == "drinks4" || Model.type.ToLower() == "milk")
+                else if (Model.type.ToLower() == "drinks3" || Model.type.ToLower() == "drinks4" || Model.type.ToLower() == "milk" || Model.type.ToLower() == "sides")
                 {
                     <div></div>
                 }
@@ -42,6 +42,10 @@
                     <span>
                      <b>NotaMeal®:</b> $@Model.mealPrice (@Model.mealCal Cal) <br /> <br />
                     </span>
+                }
+                else 
+                {
+                    <br /><br />
                 }
                 
             </p>
@@ -102,7 +106,32 @@
                                     </table>
                                 }
 
-                                if (Model.type.ToLower() == "drinks3")
+                                @if (Model.type.ToLower() == "sides")
+                                {
+                                    @if (Model.name.ToLower() == "french fries")
+                                    {
+                                        <table>
+                                            <tr> <td> <b>Sizes:</b> </td> </tr>
+                                            <tr>
+                                                <td><input type="radio" name="size-S" value="Small"><label for="Small">Small: $2.39 (280 Cal)</label></td>
+                                                <td><input type="radio" id="Coffee_M" name="size-M" value="Medium" checked><label for="Medium">Medium: $2.69 (420 Cal)</label></td>
+                                                <td><input type="radio" name="size-L" value="Large"><label for="Large">Large: $2.99 (560 Cal)</label></td>
+                                            </tr>
+                                        </table>
+                                    }
+                                    else if (Model.name.ToLower() == "french fries")
+                                    {
+                                        <table>
+                                            <tr> <td> <b>Sizes:</b> </td> </tr>
+                                            <tr>
+                                                <td><input type="radio" id="Coffee_M" name="size-M" value="Medium" checked><label for="Medium">Medium: $2.89 (300 Cal)</label></td>
+                                                <td><input type="radio" name="size-L" value="Large"><label for="Large">Large: $3.49 (450 Cal)</label></td>
+                                            </tr>
+                                        </table>
+                                    }
+
+                                }
+                                else if (Model.type.ToLower() == "drinks3")
                                 {
                                     @if (Model.name == "coffee")
                                     {
@@ -141,6 +170,8 @@
                                                     <td><input type="radio" name="shakes" value="Vanilla"><label for="Vanilla">Vanilla</label></td>
                                                     <td><input type="radio" name="shakes" value="Chocolate"><label for="Chocolate">Chocolate</label></td>
                                                     <td><input type="radio" name="shakes" value="Strawberry"><label for="Strawberry">Strawberry</label></td>
+                                                    <td><input type="radio" name="shakes" value="Asphalt"><label for="Asphalt">Asphalt</label></td>
+                                                    <td><input type="radio" name="shakes" value="Cement"><label for="Cement">Cement</label></td>
                                                 </tr>
                                             </table>
                                         </p>
@@ -229,37 +260,3 @@
         </div>
     </div>
 </div>
-
-
-@*
-
-else if (Model.type.ToLower() == "dessert")
-{
-    <input type="image" src="@Model.imageSrc" class="collapsible item center" padding="0px" margin="0px" />
-    <div class="itemInfo">
-        <p id="Prices">
-            $@Model.soloPrice (@Model.soloCal Cal.) <br />
-            <b>Includes:</b> @Model.includes
-        </p>
-        <button id="NutFacts" class="collapsible">Nutritional Information</button>
-        <div class="itemInfo">
-            <b>Contains:</b> @Model.allergens <br />
-            <b>Nutritional Facts:</b>
-            <div class="shrinkText">
-                <table class="nutTable">
-                    <tr> <td>Calories: @Model.soloCal</td>                 <td>Calories from Fat: @Model.FatCal_Solo</td>   <td>Saturated Fat (g): @Model.SatFat_Solo</td> </tr>
-                    <tr> <td>Trans Fat (g): @Model.TranFat_Solo</td>       <td>Cholesterol (g): @Model.Chole_Solo</td>      <td>Sodium (mg): @Model.Sodium_Solo</td> </tr>
-                    <tr> <td>Dietary Fiber (g): @Model.DietFiber_Solo</td> <td>Protein (g): @Model.Protein_Solo</td>        <td>Sugars (g): @Model.Sugars_Solo</td> </tr>
-                </table>
-                <br />
-            </div>
-        </div>
-        <form asp-controller="Menu" asp-action="DUD">
-            <input type="image" src="Resources/btnAddToOrder.png" class="AddButton center"  />
-        </form>
-    </div>
-}
-else
-{
-    <h5>Error. No Item Availiable.</h5>
-}*@
