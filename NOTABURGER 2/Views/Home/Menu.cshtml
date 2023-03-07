@@ -12,7 +12,7 @@
             <div class="container divs divs3">
                 <!--Section: Content-->
                 <section class="text-center">
-                    <h4 class="mb-xxl-0 text-white"><strong><a href="">Menu</a></strong></h4>
+                    <h4 class="mb-xxl-0 text-white"><strong><a href="https://cdn.discordapp.com/attachments/1039941792113635358/1080695328380030986/RIP_Ellie2.wav">Menu</a></strong></h4>
                     <br /><br />
                     <h2 class="mb-xxl-0 text-white"><strong>Burgers</strong></h2>
                     <div class="row">
@@ -110,7 +110,7 @@
     </body>
     </html>
 }
-else if (User.IsInRole("Employee"))
+@*else if (User.IsInRole("Employee"))
 {
     <html>
     <body>
@@ -214,119 +214,120 @@ else if (User.IsInRole("Employee"))
             <div>
                 <br /><br /><br /><br /><br /><br />
             </div>
-            @* </section>*@
+            @* </section>
     </body>
     </html>
 
-} // TEST
-else // CUSTOMER
+*@
+
+else 
 {
 
-    <html>
-    <body>
+<html>
+<body>
 
-        <!--Main layout-->
-        <main class="my-5">
-            <div class="container divs divs3">
-                <!--Section: Content-->
-                <section class="text-center">
-                    <h4 class="mb-xxl-0 text-white"><strong><a href="https://cdn.discordapp.com/attachments/1039941792113635358/1080695328380030986/RIP_Ellie2.wav">Menu</a></strong></h4>
-                    <br /><br />
-                    <h2 class="mb-xxl-0 text-white"><strong>Burgers</strong></h2>
-                    <div class="row">
-                        @foreach (MenuItem item in Model)
+    <!--Main layout-->
+    <main class="my-5">
+        <div class="container divs divs3">
+            <!--Section: Content-->
+            <section class="text-center">
+                <h4 class="mb-xxl-0 text-white"><strong>Menu</strong></h4>
+                <br /><br />
+                <h2 class="mb-xxl-0 text-white"><strong>Burgers</strong></h2>
+                <div class="row">
+                    @foreach (MenuItem item in Model)
+                    {
+                        if (item.type.ToLower() == "burger")
                         {
-                            if (item.type.ToLower() == "burger")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
                         }
+                    }
 
-                    </div>
-                    <br /><br />
-                    <h2 class="mb-xxl-0 text-white"><strong>Chicken</strong></h2>
-                    <div class="row">
-                        @foreach (MenuItem item in Model)
+                </div>
+                <br /><br />
+                <h2 class="mb-xxl-0 text-white"><strong>Chicken</strong></h2>
+                <div class="row">
+                    @foreach (MenuItem item in Model)
+                    {
+                        if (item.type.ToLower() == "chickensando")
                         {
-                            if (item.type.ToLower() == "chickensando")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
-                            else if (item.type.ToLower() == "chicken")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
                         }
-                    </div>
-                    <br /><br />
-                    <h2 class="mb-xxl-0 text-white"><strong>Sides</strong></h2>
-                    <div class="row">
-                        @foreach (MenuItem item in Model)
+                        else if (item.type.ToLower() == "chicken")
                         {
-                            if (item.type.ToLower() == "sides")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
-                            else if (item.type.ToLower() == "apple")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
                         }
-                    </div>
-                    <br /><br />
-                    <h2 class="mb-xxl-0 text-white"><strong>Breakfast</strong></h2>
-                    <div class="row">
-                        @foreach (MenuItem item in Model)
+                    }
+                </div>
+                <br /><br />
+                <h2 class="mb-xxl-0 text-white"><strong>Sides</strong></h2>
+                <div class="row">
+                    @foreach (MenuItem item in Model)
+                    {
+                        if (item.type.ToLower() == "sides")
                         {
-                            if (item.type.ToLower() == "breakfast")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
-                            else if (item.type.ToLower() == "biscuitsando")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
-                            else if (item.type.ToLower() == "breakfastplatter")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
                         }
-                    </div>
-                    <br /><br />
-                    <h2 class="mb-xxl-0 text-white"><strong>Drinks and Shakes</strong></h2>
-                    <div class="row">
-                        @foreach (MenuItem item in Model)
+                        else if (item.type.ToLower() == "apple")
                         {
-                            if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
                         }
-                    </div>
-                    <br /><br />
-                    <h2 class="mb-xxl-0 text-white"><strong>Dessert</strong></h2>
-                    <div class="row">
-                        @foreach (MenuItem item in Model)
+                    }
+                </div>
+                <br /><br />
+                <h2 class="mb-xxl-0 text-white"><strong>Breakfast</strong></h2>
+                <div class="row">
+                    @foreach (MenuItem item in Model)
+                    {
+                        if (item.type.ToLower() == "breakfast")
                         {
-                            if (item.type.ToLower() == "dessert")
-                            {
-                                <partial name="_MenuPartialView.cshtml" for="@item" />
-                            }
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
                         }
-                    </div>
+                        else if (item.type.ToLower() == "biscuitsando")
+                        {
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
+                        }
+                        else if (item.type.ToLower() == "breakfastplatter")
+                        {
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
+                        }
+                    }
+                </div>
+                <br /><br />
+                <h2 class="mb-xxl-0 text-white"><strong>Drinks and Shakes</strong></h2>
+                <div class="row">
+                    @foreach (MenuItem item in Model)
+                    {
+                        if (item.type.ToLower() == "drinks3" || item.type.ToLower() == "drinks4" || item.type.ToLower() == "milk")
+                        {
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
+                        }
+                    }
+                </div>
+                <br /><br />
+                <h2 class="mb-xxl-0 text-white"><strong>Dessert</strong></h2>
+                <div class="row">
+                    @foreach (MenuItem item in Model)
+                    {
+                        if (item.type.ToLower() == "dessert")
+                        {
+                            <partial name="_MenuPartialView.cshtml" for="@item" />
+                        }
+                    }
+                </div>
 
-                </section>
-                <!--Section: Content-->
+            </section>
+            <!--Section: Content-->
 
-            </div>
+        </div>
 
-            <!-- SPACER -->
-            <div>
-                <br /><br /><br /><br /><br /><br />
-            </div>
-            @* </section>*@
-    </body>
-    </html>
+        <!-- SPACER -->
+        <div>
+            <br /><br /><br /><br /><br /><br />
+        </div>
+        @* </section>*@
+</body>
+</html>
 
 }
 

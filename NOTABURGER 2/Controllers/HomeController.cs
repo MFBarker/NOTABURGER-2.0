@@ -32,9 +32,13 @@ namespace NOTABURGER_2.Controllers
         // Get conspiracy theorist information
         public IActionResult UserConspiracy()
         {
-            string email = "iyang@employee.notaburger.com";
-            string password = "Th3_B04z_1nBLu3";
-            return Content(password, email);
+            string email_password = "Email: iyang@employee.notaburger.com " + "\n" + "Password: Th3_B04z_1nBLu3"
+                + "\r\n\r\n" + "LAST CHAT: " + "\r\n\r\n" + "Call_ForSets: Hey there, I wanted to talk to you about something important.\r\n\r\niYang: Sure, what's going on?\r\n\r\nCall_ForSets: Well, we recently discovered that one of our employees accessed confidential information that they weren't authorized to see.\r\n\r\niYang: Oh no, who was it?\r\n\r\nCall_ForSets: I don't want to name names just yet, but we're considering taking disciplinary action. The problem is, the employee has threatened to leak the information if we do.\r\n\r\niYang: That's a serious threat. What kind of information are we talking about here?" +
+                "\r\n\r\nCall_ForSets: I can't give you specifics, but suffice it to say that it's sensitive and could cause some real problems if it got out.\r\n\r\niYang: I see. Well, what are our options? Can we fire the employee?\r\n\r\nCall_ForSets: We're certainly considering it. We'll need to gather more information and make sure we have a solid case, but it's definitely on the table.\r\n\r\niYang: And what if they follow through on their threat to leak the information?\r\n\r\nCall_ForSets: We're taking steps to prevent that from happening, but if it does, we'll have to deal with it. We'll have to evaluate the potential damage and take appropriate action." +
+                "\r\n\r\niYang: Okay, I understand. I hope this situation gets resolved soon.\r\n\r\nCall_ForSets: So do I. We'll keep you updated as things progress. And just to be clear, we appreciate your discretion on this matter.\r\n\r\niYang: Of course, I won't say anything to anyone.";
+
+
+            return Content(email_password);
 
         }
 

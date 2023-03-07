@@ -2,8 +2,7 @@
     ViewData["Title"] = "Careers";
 }
 
-
-@if ((User.IsInRole("Administrator")) || (User.IsInRole("Employee")))
+@if (User.IsInRole("Administrator") || User.IsInRole("Employee"))
 {
    
     <html>
