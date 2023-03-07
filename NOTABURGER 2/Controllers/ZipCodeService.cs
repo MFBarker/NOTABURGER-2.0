@@ -1,6 +1,7 @@
 ﻿using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
 using System.Text.Json;
+using Newtonsoft.Json;
 
 namespace NOTABURGER_2.Controllers
 {
@@ -13,22 +14,22 @@ namespace NOTABURGER_2.Controllers
         {
             client = new HttpClient()
             {
-                BaseAddress = new Uri("https://api.zippopotam.us/")
+                BaseAddress = new Uri("https://api.zippopotam.us")
             };
         }
 
-        public async Task<List<ZipModel>> GetLocation(int postalcode)
+        public async Task<ZipModel> GetLocation(int postalcode)
         {
             var url = string.Format("/us/{0}", postalcode);
-            var result = new List<ZipModel>();
+            var result = new ZipModel();
             var response = await client.GetAsync(url);
 
             if (response.IsSuccessStatusCode)
             {
                 var stringResponse = await response.Content.ReadAsStringAsync();
 
-                //result = JsonSerializer.Deserialize<ZipModel>(stringResponse,
-                //    new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                result = System.Text.Json.JsonSerializer.Deserialize<ZipModel>(stringResponse, new JsonSerializerOptions() { PropertyNamingPolicy = JsonNamingPolicy.CamelCase });
+                
 
             }
             else

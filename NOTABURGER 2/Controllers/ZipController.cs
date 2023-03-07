@@ -20,11 +20,11 @@ namespace NOTABURGER_2.Controllers
         {
             if (txtZip == null)
             {
-                return View(new List<ZipModel>());
+                return View(new ZipModel());
             }
             int zip = int.Parse(txtZip);
 
-            List<ZipModel> zipcodes = new List<ZipModel>();
+            ZipModel zipcodes = new ZipModel();
             zipcodes = await _zipCodeService.GetLocation(zip);
 
             return View(zipcodes);
@@ -34,10 +34,10 @@ namespace NOTABURGER_2.Controllers
         {
             if (zipcode == 0)
             {
-                return View(new List<ZipModel>());
+                return View(new ZipModel());
             }
 
-            List<ZipModel> zipcodes = new List<ZipModel>();
+            ZipModel zipcodes = new ZipModel();
             zipcodes = await _zipCodeService.GetLocation(zipcode);
 
             return View(zipcodes);
