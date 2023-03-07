@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
 
@@ -16,6 +17,7 @@ namespace NOTABURGER_2.Controllers
             _zipCodeService = zipCodeService;
         }
 
+        [Authorize(Roles = "Administrator")]
         public async Task<IActionResult> GetZip(string txtZip)
         {
             if (txtZip == null)

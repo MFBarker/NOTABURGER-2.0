@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using NOTABURGER_2.Interfaces;
 using NOTABURGER_2.Models;
 using System.Diagnostics;
-
+using System.Security.Claims;
 
 namespace NOTABURGER_2.Controllers
 {
@@ -29,11 +29,13 @@ namespace NOTABURGER_2.Controllers
             return View(dal.GetMenu());
         }
 
-        [Authorize(Roles = "Administrator")]
-        public class AdministrationController : Controller
+        // Get conspiracy theorist information
+        public IActionResult UserConspiracy()
         {
-            public IActionResult Menu() =>
-                Content("Administrator");
+            string email = "iyang@employee.notaburger.com";
+            string password = "Th3_B04z_1nBLu3";
+            return Content(password, email);
+
         }
 
         public IActionResult GetPeople()

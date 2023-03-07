@@ -8,7 +8,7 @@ namespace NOTABURGER_2.Interfaces
         MenuItem ReturnItem(int id);
         void Edit(MenuItem item);
         //IEnumerable<MenuItem> GetMenu();
-
+       
         IEnumerable<Person> GetPeople();
     }
 }
