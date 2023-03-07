@@ -37,5 +37,17 @@ namespace NOTABURGER_2.Data
         {
             return db.MenuItems.FirstOrDefault(x => x.id == id);
         }
+
+        public void Delete(int? id)
+        {
+            MenuItem foundItem = GetItem(id);
+            db.MenuItems.Remove(foundItem);
+            db.SaveChanges();
+        }
+
+        public MenuItem GetItem(int? id)
+        {
+            return db.MenuItems.Where(g => g.id == id).FirstOrDefault();
+        }
     }
 }
