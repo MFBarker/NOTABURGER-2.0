@@ -88,6 +88,10 @@ namespace NOTABURGER_2.Controllers
         {
             return View();
         }
+        public IActionResult Bloopers()
+        {
+            return Redirect("https://drive.google.com/drive/u/0/folders/1ZRQ8Q90vAjZFWAlY9nufxlmeUNj7Dm9B"); ;
+        }
 
         public IActionResult Search(string input)
         {

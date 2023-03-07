@@ -58,6 +58,11 @@ app.MapControllerRoute(
     pattern: "secrets/vEQww6AoSWo/EMEPiZZ950I",
 
     defaults: new { controller = "Home", action = "SecretMenu" });
+app.MapControllerRoute(
+    name: "Bloopers",
+    pattern: "/Bloopers",
+
+    defaults: new { controller = "Home", action = "Bloopers" });
 
 app.MapRazorPages();
 
