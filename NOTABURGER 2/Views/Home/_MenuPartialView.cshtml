@@ -215,6 +215,17 @@
                     </div>
                 </div>
             </div>
+            @if(User.IsInRole("Administrator"))
+            {
+                <div>
+                    <a asp-controller="Menu" asp-action="Edit" asp-route-id="@Model.id" class="form-control btn-primary">
+                        Edit
+                    </a>
+                    <a asp-controller="Menu" asp-action="Delete" asp-route-id="@Model.id" class="form-control btn-primary">
+                        Delete
+                    </a>
+                </div>
+            }
         </div>
     </div>
 </div>
