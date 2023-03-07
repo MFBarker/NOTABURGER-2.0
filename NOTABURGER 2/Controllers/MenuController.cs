@@ -50,5 +50,13 @@ namespace NOTABURGER_2.Controllers
             }
             return View();
         }
+
+        public IActionResult Delete(int? id)
+        {
+            dal.Delete(id);
+            TempData["success"] = "Item Deleted";
+
+            return RedirectToAction("Menu", "Menu");
+        }
     }
 }
