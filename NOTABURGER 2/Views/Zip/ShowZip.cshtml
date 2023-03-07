@@ -1,13 +1,13 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿<link rel="stylesheet" href="~/css/L.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 @model ZipModel
 @if (Model != null )
    
 {
-            <table class="table table-bordered table-striped table-secondary table-sm">
+    <div class="divs divs3">
+        <img class="divs2" src="~/images/ZipCodeImg.png" />
+        <table class="table table-bordered table-striped table-secondary table-sm  centerTable">
                 <thead>
                     <tr>
                         <th>Country</th>
@@ -31,6 +31,7 @@
             }
                 </tbody>
             </table>
+    </div>
 }
 else{
     <h3>No Data</h3>

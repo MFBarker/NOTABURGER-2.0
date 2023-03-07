@@ -42,9 +42,13 @@
                         <li class="nav-item topMenu">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Rewards"><strong>Rewards</strong></a>
                         </li>
-                        <li class="nav-item topMenu">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Zip" asp-action="GetZip"><strong>Location</strong></a>
-                        </li>
+                        @if(User.IsInRole("Administrator"))
+                        {
+                            <li class="nav-item topMenu">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Zip" asp-action="GetZip"><strong>Location</strong></a>
+                            </li>
+                        }
+
 
                     </ul>
                     <form class="d-flex" role="search" asp-controller="Home" asp-action="Search" method="post">
