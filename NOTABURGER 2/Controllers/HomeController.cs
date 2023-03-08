@@ -24,6 +24,7 @@ namespace NOTABURGER_2.Controllers
         }
 
         [Route("Menu")]
+        [Authorize]
         public IActionResult Menu()
         {
             return View(dal.GetMenu());
