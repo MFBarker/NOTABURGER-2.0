@@ -31,11 +31,10 @@ namespace NOTABURGER_2.Controllers
         [HttpGet] //loading edit page
         public IActionResult Edit(int? id)
         {
-            MenuItem foundItem = dal.GetMenu().Where(g => g.id == id).FirstOrDefault();
+            MenuItem foundItem = dal.GetItem(id);
 
-            dal.Edit(foundItem);
+            dal.EditItem(foundItem);
             return View(foundItem);
-
         }
 
         [HttpPost]
@@ -43,10 +42,9 @@ namespace NOTABURGER_2.Controllers
         {
             if (ModelState.IsValid)
             {
-                dal.Edit(m);
+                dal.EditItem(m);
                 TempData["success"] = m.name + " updated";
-                return RedirectToAction("Menu", "Menu");
-
+                return RedirectToAction("Menu", "Home");
             }
             return View();
         }
@@ -56,7 +54,7 @@ namespace NOTABURGER_2.Controllers
             dal.Delete(id);
             TempData["success"] = "Item Deleted";
 
-            return RedirectToAction("Menu", "Menu");
+            return RedirectToAction("Menu", "Home");
         }
     }
 }

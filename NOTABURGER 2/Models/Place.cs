@@ -12,5 +12,7 @@ namespace NOTABURGER_2.Models
         [JsonPropertyName("state abbreviation")]
         public string StateAbbreviation { get; set; }
         public string Latitude { get; set; }
+
+        Place() { }
     }
 }
