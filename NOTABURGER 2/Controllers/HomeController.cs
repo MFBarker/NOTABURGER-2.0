@@ -157,6 +157,11 @@ namespace NOTABURGER_2.Controllers
         {
             return Redirect("https://youtu.be/EMEPiZZ950I");
         }
+
+        public IActionResult Credits()
+        {
+            return View();
+        }
     }
 
 

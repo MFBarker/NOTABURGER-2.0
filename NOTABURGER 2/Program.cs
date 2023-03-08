@@ -64,6 +64,13 @@ app.MapControllerRoute(
 
     defaults: new { controller = "Home", action = "Bloopers" });
 
+
+app.MapControllerRoute(
+    name: "Credits",
+    pattern: "/Credits",
+
+    defaults: new { controller = "Home", action = "Credits" });
+
 app.MapRazorPages();
 
 app.Run();
