@@ -65,9 +65,9 @@ namespace NOTABURGER_2.Models
         [Required]
         public string? imageSrc { get; set; }
 
-        MenuItem() { }
+        public MenuItem() { }
 
-        MenuItem(string Name, float SoloPrice, float MealPrice, int SoloCal, int MealCal, string type, string includes, string? PattyType, string? imageSrc, string? allergens,
+        public MenuItem(string Name, float SoloPrice, float MealPrice, int SoloCal, int MealCal, string type, string includes, string? PattyType, string? imageSrc, string? allergens,
             int? FatCalS, int? SatFatS, int? TranFatS, int? CholeS, int? SodiumS, int? DietFiberS, int? SugarsS,
             int? FatCalM, int? SatFatM, int? TranFatM, int? CholeM, int? SodiumM, int? DietFiberM, int? SugarsM
             )

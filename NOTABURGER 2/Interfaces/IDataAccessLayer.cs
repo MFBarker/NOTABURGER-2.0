@@ -6,7 +6,7 @@ namespace NOTABURGER_2.Interfaces
     {
         IEnumerable<MenuItem> GetMenu();
         MenuItem ReturnItem(int id);
-        void Edit(MenuItem item);
+        void EditItem(MenuItem item);
 
         MenuItem GetItem(int? id);
 

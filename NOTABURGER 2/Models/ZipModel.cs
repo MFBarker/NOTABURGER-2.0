@@ -8,6 +8,5 @@
         
         public List<Place> Places { get; set; }
 
-
     }
 }
