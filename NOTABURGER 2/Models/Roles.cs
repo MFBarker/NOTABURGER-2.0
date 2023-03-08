@@ -12,7 +12,7 @@ namespace NOTABURGER_2.Models
         [Required]
         public string Role { get; set; }
 
-        Roles () { }
+        public Roles () { }
 
     }
 }

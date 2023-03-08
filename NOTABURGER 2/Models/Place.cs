@@ -13,6 +13,6 @@ namespace NOTABURGER_2.Models
         public string StateAbbreviation { get; set; }
         public string Latitude { get; set; }
 
-        Place() { }
+        public Place() { }
     }
 }

@@ -26,7 +26,7 @@ namespace NOTABURGER_2.Models
         [Required]
         public string? imageSrc { get; set; }
 
-        SecretMenuItem() { }
+        public SecretMenuItem() { }
 
         SecretMenuItem(int id, string name, float soloPrice,string type, string? includes, string? allergens, string? imageSrc)
         {
